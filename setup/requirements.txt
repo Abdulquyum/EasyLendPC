@@ -1,0 +1,39 @@
+# Django and essential Django-related packages
+Django==4.2
+djangorestframework==3.14.0
+
+# PostgreSQL database support (for production environment)
+psycopg2==2.9.6
+
+# SQLAlchemy for database interaction
+SQLAlchemy==2.0.20
+django-sqlalchemy==0.2.2  # Integration of Django and SQLAlchemy
+
+# Gunicorn for production server
+gunicorn==20.1.0
+
+# Django security and optimization tools
+django-cors-headers==4.0.0
+whitenoise==6.5.0  # For serving static files in production
+django-environ==0.10.0  # For environment variables and settings management
+
+# Celery for task queues (optional, if you need async task processing)
+celery==5.3.3
+django-celery-beat==2.5.0
+
+# Redis (optional, if using Celery or caching)
+redis==4.6.0
+
+# Email support (if needed)
+django-ses==2.0.0
+
+# Other optional production packages
+Sentry-SDK==1.28.0  # For error tracking and logging
+dj-database-url==1.0.0  # Database URL parsing for production environments
+
+# Testing and Debugging
+pytest-django==4.5.2
+coverage==7.3.1
+
+# Additional libraries for security and performance (production)
+cryptography==41.0.4
