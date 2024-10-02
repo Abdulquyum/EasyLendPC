@@ -1,2 +1,7 @@
 easylendpc_env/
 
+_pycache_/
+
+*.gitignore
+
+templates/
