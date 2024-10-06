@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from django.shortcuts import render
 from django.http import JsonResponse
 from telegram import Update
