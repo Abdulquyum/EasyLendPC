@@ -1,0 +1,11 @@
+<h1>LIST OF LAPTOPS AND THEIR STATUS</h1>
+
+<ul>
+{% for laptop in object_list %}
+<li>
+    <a href="{% url 'laptop-details' laptop.pk %}">{{ laptop.name }}</a> <br> 
+    <img src="{{ laptop.image.url }}" alt="" width="70px"> <br>
+    {{ laptop.description}} <br>
+    {{ laptop.status}}</li>
+{% endfor %}
+</ul>

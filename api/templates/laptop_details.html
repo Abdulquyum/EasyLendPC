@@ -1,0 +1,6 @@
+<h2> {{ laptop.name }} </h2>
+<img src="{{ laptop.image.url }}" alt="" width="50%">
+<h4>{{ laptop.description }}</h4>
+<h6>{{ laptop.status }}</h6>
+
+<a href="{% url 'display' %}">back</a>

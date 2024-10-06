@@ -6,9 +6,10 @@ from telegram import Update
 from telegram.ext import Dispatcher
 from django.http import JsonResponse
 import json
-# Create your views here.
 from telegram import Update, Bot
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from django.views.generic import ListView, DetailView #list laptops and present its description
+from .models import Laptop
 
 # Create bot instance with your token
 bot = Bot(token="7926189230:AAFcdMleY25JBfrdRIxvpf9EGDBFQiM-l6A")
@@ -51,3 +52,17 @@ def telegram_bot_webhook(request):
     
     return JsonResponse({'error': 'Invalid request method'}, status=400)
  
+def home(request):
+    # Home page or LAnding page
+    return render(request, 'home.html', {})
+
+class DisplayLaptop(ListView):
+    # list every available laptops to te display page
+    model = Laptop
+    template_name = 'display.html'
+
+class LaptopDetails(DetailView):
+    #Give details of individual laptops when clicked
+    model = Laptop
+    template_name = 'laptop_details.html'
+
