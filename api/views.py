@@ -8,7 +8,7 @@ from django.http import JsonResponse
 import json
 from telegram import Update, Bot
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-from django.views.generic import ListView, DetailView #list laptops and present its description
+from django.views.generic import ListView, DetailView, CreateView #list laptops and present its description
 from .models import Laptop
 
 # Create bot instance with your token
@@ -66,3 +66,8 @@ class LaptopDetails(DetailView):
     model = Laptop
     template_name = 'laptop_details.html'
 
+class AddLaptop(CreateView):
+    # add laptop and details available for lend
+    model = Laptop
+    template_name = 'add_laptop.html'
+    fields = '__all__'

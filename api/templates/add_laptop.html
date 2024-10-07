@@ -6,12 +6,11 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>ADD LAPTOP YOU WANT TO LEND OUT</h1>
     <div class="form-group">
         <form method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            <label for="description">Description</label>
-            <input type="text" value="description" id="description" name="description">
-            <img src="{{ post.image.url }}" alt="">
+            {% csrf_token %} <!-- security purpose -->
+            {{ form.as_p }}  <!-- duplicate as it was in the models -->
             <button>POST</button>
         </form>
     </div>
