@@ -8,8 +8,9 @@ from django.http import JsonResponse
 import json
 from telegram import Update, Bot
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-from django.views.generic import ListView, DetailView, CreateView #list laptops and present its description
-from .models import Laptop
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView #list laptops and present its description
+from .models import Laptop, LendOutPc
+from django.urls import reverse_lazy
 
 # Create bot instance with your token
 bot = Bot(token="7926189230:AAFcdMleY25JBfrdRIxvpf9EGDBFQiM-l6A")
@@ -71,3 +72,36 @@ class AddLaptop(CreateView):
     model = Laptop
     template_name = 'add_laptop.html'
     fields = '__all__'
+
+class UpdateLaptop(UpdateView):
+    # Edit and update laptop details available for lend
+    model = Laptop
+    template_name = 'update_laptop.html'
+    fields = ['laptop_name', 'description', 'status']
+
+class DeleteLaptop(DeleteView):
+    # Delete laptop from from DB
+    model = Laptop
+    template_name = 'delete_laptop.html'
+    success_url = reverse_lazy('display')
+
+class UserAddLaptop(CreateView):
+    # User and laptop and details available for lend
+    model = LendOutPc
+    template_name = 'userToLend.html'
+    fields = '__all__'
+
+class UserDisplayLaptop(ListView):
+    # list every available laptops to te display page
+    model = LendOutPc
+    template_name = 'adminCheckPc.html'
+
+
+
+
+
+
+
+
+
+

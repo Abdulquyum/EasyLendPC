@@ -1,6 +1,16 @@
-<h2> {{ laptop.name }} </h2>
-<img src="{{ laptop.image.url }}" alt="" width="40%">
+<h2> {{ laptop.name }} - <a href="{% url 'update_laptop' laptop.pk %}">[edit]</a> - 
+<a href="{% url 'delete_laptop' laptop.pk %}">[delete]</a>
+</h2>
+<h3>Owned By: {{ laptop.owner}}</h3>
+{% if laptop.image %} 
+    <img src="{{ laptop.image.url }}" alt="laptop" width="70px">
+{% else %}
+    <img src="" alt="image Unvailable"> <br>
+{% endif %}
 <h4>{{ laptop.description }}</h4>
-<h5>{{ laptop.status }}</h5>
+<strong>status: {{ laptop.status }}</strong> <br> <br>
+
+
+<button><a href="{% url 'telegram_bot_webhook' %}">CHECK OUT</a></button>
 
 <a href="{% url 'display' %}">back</a> 

@@ -1,0 +1,7 @@
+<h1>ADD LAPTOP YOU WANT TO LEND OUT</h1>
+    <div class="form-group">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %} <!-- security purpose -->
+            {{ form.as_p }}  <!-- duplicate as it was in the models -->
+            <button>POST</button>
+        </form>

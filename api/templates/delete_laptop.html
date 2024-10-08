@@ -1,0 +1,14 @@
+<h1>DELETE LAPTOP FROM DATABASE</h1>
+    <div class="form-group">
+         <h2>DELETE: {{ laptop.name }}</h2>
+         {% if laptop.image %} 
+            <img src="{{ laptop.image.url }}" alt="laptop" width="70px">
+        {% else %}
+            <img src="" alt="image Unvailable"> <br>
+        {% endif %}
+    <h2>ARE YOU SURE YOU WANT TO DELETE???</h2>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %} <!-- security purpose -->
+            <button>DELETE</button>
+        </form>
+    </div>

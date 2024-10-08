@@ -1,11 +1,18 @@
 <h1>LIST OF LAPTOPS AND THEIR STATUS</h1>
 
 <ul>
-{% for laptop in object_list %}
-<li>
-    <a href="{% url 'laptop-details' laptop.pk %}">{{ laptop.name }}</a> <br> 
-    <img src="{{ laptop.image.url }}" alt="" width="70px"> <br>
-    {{ laptop.description}} <br>
-    {{ laptop.status}}</li>
-{% endfor %}
+    {% for laptop in object_list %}
+        <li>
+            <a href="{% url 'laptop-details' laptop.pk %}">{{ laptop.name }}</a> - 
+            <small><a href="{% url 'update_laptop' laptop.pk %}">[edit]</a></small> <br>
+            <h4>Owned By: {{ laptop.owner}}</h4>
+            {% if laptop.image %} 
+                <img src="{{ laptop.image.url }}" alt="laptop" width="70px">
+            {% else %}
+                <img src="" alt="image Unvailable"> <br>
+            {% endif %} <br>
+            {{ laptop.description}} <br>
+            <strong>status: {{ laptop.status}}</strong>
+        </li> <br><br>
+    {% endfor %}
 </ul>

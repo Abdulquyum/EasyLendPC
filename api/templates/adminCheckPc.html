@@ -1,0 +1,20 @@
+<h1>LIST OF PENDING LAPTOPS AND THEIR STATUS</h1>
+
+<ul>
+    {% for userpc in object_list %}
+        <li>
+            <a href="{% url 'laptop-details' userpc.pk %}">{{ userpc.pc_name }}</a> - 
+            <small><a href="{% url 'update_laptop' userpc.pk %}">[edit]</a></small> - 
+            <a href="{% url 'delete_laptop' userpc.pk %}">[delete]</a><br>
+            <h3>Owned By: {{ userpc.pc_owner}}</h3>
+            {% if userpc.image %} 
+                <img src="{{ userpc.image.url }}" alt="laptop" width="70px">
+            {% else %}
+                <img src="" alt="image Unvailable"> <br>
+            {% endif %} <br>
+            {{ userpc.pc_description}} <br>
+            <strong>status: {{ userpc.pc_status}}</strong>
+            <h3>Owner Phone Number: {{ userpc.phone_number}}</h3>
+        </li> <br><br>
+    {% endfor %}
+</ul>
