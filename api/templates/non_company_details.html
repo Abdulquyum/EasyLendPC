@@ -1,0 +1,14 @@
+<h2> {{ userpc.pc_name }} </h2>
+    <h3>Owned By: {{ userpc.pc_owner}}</h3>
+    {% if userpc.image %} 
+        <img src="{{ userpc.image.url }}" alt="laptop" width="70px">
+    {% else %}
+        <img src="" alt="image Unvailable"> <br>
+    {% endif %}
+    <h4>{{ userpc.pc_description }}</h4>
+    <strong>status: {{ userpc.pc_status }}</strong> <br> <br>
+    
+    
+    <button><a href=https://t.me/easylendpc_bot>CHECK OUT</a></button>
+    
+    <a href="{% url 'non_company_pc' %}">back</a> 

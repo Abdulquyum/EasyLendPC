@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views #home page
-from .views import DisplayLaptop, LaptopDetails, AddLaptop, UpdateLaptop, DeleteLaptop, UserAddLaptop, UserDisplayLaptop #Display page and addPAge
+from .views import DisplayLaptop, LaptopDetails, AddLaptop, UpdateLaptop, DeleteLaptop, UserAddLaptop, UserDisplayLaptop, UserLaptopDetails #Display page and addPAge
 
 urlpatterns = [
     path('', views.home, name="home"),
@@ -11,5 +11,7 @@ urlpatterns = [
     path('details/edit/<int:pk>/', UpdateLaptop.as_view(), name='update_laptop'),
     path('details/<int:pk>/recycle', DeleteLaptop.as_view(), name='delete_laptop'),
     path('user/lendout', UserAddLaptop.as_view(), name='userToLend'),
-    path('administration/checkpc', UserDisplayLaptop.as_view(), name='admin-check-pc'),
+    path('non_company_pc', UserDisplayLaptop.as_view(), name='non_company_pc'),
+    path('non_company_pc/details/<int:pk>', UserLaptopDetails.as_view(), name="nonCompanyPc-details"), # name - link to be referenced in html file
+
 ]

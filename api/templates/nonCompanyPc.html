@@ -1,9 +1,9 @@
-<h1>LIST OF PENDING LAPTOPS AND THEIR STATUS</h1>
+<h1>LIST OF LAPTOPS Not uploaded by EasyLendPC </h1>
 
 <ul>
     {% for userpc in object_list %}
         <li>
-            <a href="{% url 'laptop-details' userpc.pk %}">{{ userpc.pc_name }}</a> - 
+            <a href="{% url 'nonCompanyPc-details' userpc.pk %}">{{ userpc.pc_name }}</a> - 
             <small><a href="{% url 'update_laptop' userpc.pk %}">[edit]</a></small> - 
             <a href="{% url 'delete_laptop' userpc.pk %}">[delete]</a><br>
             <h3>Owned By: {{ userpc.pc_owner}}</h3>
@@ -18,3 +18,4 @@
         </li> <br><br>
     {% endfor %}
 </ul>
+<a href="{% url 'display' %}">back</a>

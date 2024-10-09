@@ -11,8 +11,9 @@
             {% else %}
                 <img src="" alt="image Unvailable"> <br>
             {% endif %} <br>
-            {{ laptop.description}} <br>
+            {{ laptop.description|slice:":200" }} <br>
             <strong>status: {{ laptop.status}}</strong>
         </li> <br><br>
     {% endfor %}
 </ul>
+<a href="{% url 'non_company_pc' %}">Next</a> <br><br>
