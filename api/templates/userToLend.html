@@ -1,7 +1,25 @@
-<h1>ADD LAPTOP YOU WANT TO LEND OUT</h1>
-    <div class="form-group">
-        <form method="POST" enctype="multipart/form-data">
-            {% csrf_token %} <!-- security purpose -->
-            {{ form.as_p }}  <!-- duplicate as it was in the models -->
-            <button>POST</button>
-        </form>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/add_laptop.css' %}">
+    <title>Add Laptop Page</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <h1>ADD LAPTOP YOU WANT TO LEND OUT</h1>
+            <div class="form-group">
+                <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %} <!-- security purpose -->
+                {{ form.as_p }}  <!-- duplicate as it was in the models -->
+                <button>POST</button>
+                </formm>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

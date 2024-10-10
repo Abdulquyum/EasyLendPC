@@ -82,7 +82,7 @@ class UpdateLaptop(UpdateView):
     # Edit and update laptop details available for lend
     model = Laptop
     template_name = 'update_laptop.html'
-    fields = ['laptop_name', 'description', 'status']
+    fields = ['name', 'description', 'status']
 
 class DeleteLaptop(DeleteView):
     # Delete laptop from from DB

@@ -7,7 +7,7 @@
             <small><a href="{% url 'update_laptop' laptop.pk %}">[edit]</a></small> <br>
             <h4>Owned By: {{ laptop.owner}}</h4>
             {% if laptop.image %} 
-                <img src="{{ laptop.image.url }}" alt="laptop" width="70px">
+                <img src="{{ laptop.image.url }}" alt="laptop" width="150px">
             {% else %}
                 <img src="" alt="image Unvailable"> <br>
             {% endif %} <br>
