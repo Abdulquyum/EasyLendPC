@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views #home page
-from .views import DisplayLaptop, LaptopDetails, AddLaptop, UpdateLaptop, DeleteLaptop, UserAddLaptop, UserDisplayLaptop, UserLaptopDetails #Display page and addPAge
+from .views import DisplayLaptop, LaptopDetails, AddLaptop, UpdateLaptop, DeleteLaptop, UserAddLaptop, UserDisplayLaptop, UserLaptopDetails, UserUpdateLaptop, UserDeleteLaptop #Display page and addPAge
 
 urlpatterns = [
     path('', views.home, name="home"),
@@ -12,6 +12,9 @@ urlpatterns = [
     path('details/<int:pk>/recycle', DeleteLaptop.as_view(), name='delete_laptop'),
     path('user/lendout', UserAddLaptop.as_view(), name='userToLend'),
     path('non_company_pc', UserDisplayLaptop.as_view(), name='non_company_pc'),
-    path('non_company_pc/details/<int:pk>', UserLaptopDetails.as_view(), name="nonCompanyPc-details"), # name - link to be referenced in html file
-
+    path('non_company_pc/detail/<int:pk>', UserLaptopDetails.as_view(), name="nonCompanyPc-details"), # name - link to be referenced in html file
+    path('administration/', views.administration, name='administration'),
+    path('aboutUs/', views.about, name='about'),
+    path('non_company_pc/detail/<int:pk>/edit', UserDeleteLaptop.as_view(), name='edit_userPc'),
+    path('non_company_pc/detail/recycle/<int:pk>', UserUpdateLaptop.as_view(), name='delete_userPc')
 ]

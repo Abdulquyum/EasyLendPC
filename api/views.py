@@ -107,9 +107,25 @@ class UserLaptopDetails(DetailView):
     model = LendOutPc
     template_name = 'non_company_details.html'
 
+class UserUpdateLaptop(UpdateView):
+    # Edit and update laptop details available for lend
+    model = LendOutPc
+    template_name = 'update_userLaptop.html'
+    fields = ['pc_name', 'pc_description', 'pc_status', 'phone_number']
 
+class UserDeleteLaptop(DeleteView):
+    # Delete laptop from from DB
+    model = LendOutPc
+    template_name = 'delete_userLaptop.html'
+    success_url = reverse_lazy('display')
 
+def administration(request):
+    # Administration page
+    return render(request, 'administration.html')
 
+def about(request):
+    # About us page
+    return render(request, 'about_us.html')
 
 
 

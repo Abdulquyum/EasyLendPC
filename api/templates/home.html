@@ -4,297 +4,390 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap/bootstrap-5.3.3-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="fontawesome/css/all.css">
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap-5.3.3-dist/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+    
     <title>EasyLendPc</title>
 </head>
 <body>
-    <div class="container">
-        <header class="p-3 border-bottom">
-            <div class="container d-flex justify-content-between align-items-center">
-                <div class="logo">
-                    <img src="{% static 'images/laptop-image.jpg' %}" alt="" height="40"><b m-3>EasyLendPc</b>
-                </div>
-                <nav>
-                    <a class="link" href="#" class="mx-2">Home</a>
-                    <a class="link" href="#" class="mx-2">Product</a>
-                    <a class="link" href="#" class="mx-2">About Us</a>
-                    <a class="link" href="#" class="mx-2">Blog</a>
-                    <a class="link" href="#" class="mx-2">Contact Us</a>
-                </nav>
-                <div class="user-actions">
-                    <a class="link" href="#" class="me-3">My Account</a>
-                    <i class="fas fa-shopping-cart"></i>
-                </div>
+<div class="container">
+    <header class="p-3 border-bottom">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo">
+                <img src="{% static 'images/laptop-image.jpg' %}" alt="" height="40"><b m-3>EasyLendPc</b>
             </div>
-        </header>
-
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="overlay"></div>
-            <div class="content">
-                <h1>Rent PCs with Ease. Anytime, Anywhere</h1>
-                <p>Fast, reliable, and affordable PC rental for your work, study, or project. Delivered to your door.</p>
-
-                <!-- Search Bar -->
-                <div class="search-bar">
-                    <input type="text" class="form-control" placeholder="Search..." style="width: 100%; padding: 10px; border-radius: 50px;">
-                </div>
-
-                <!-- Buttons -->
-                <div class="hero-buttons">
-                    <button class="btn btn-outline-light">Find a PC</button>
-                    <button class="btn btn-outline-light">Location to drop</button>
-                </div>
+            <nav>
+                <a class="link" href="main.html" class="mx-2">Home</a>
+                <a class="link" href="{% url 'display'%}" class="mx-2">Product</a>
+                <a class="link" href="#" class="mx-2">About Us</a>
+                <a class="link" href="#" class="mx-2">Blog</a>
+                <a class="link" href="#" class="mx-2">Contact Us</a>
+            </nav>
+            <div class="user-actions">
+                <a class="link" href="#" class="me-3">My Account</a>
+                <i class="fas fa-shopping-cart"></i>
             </div>
-        </section>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Rent PCs with Ease. Anytime, Anywhere</h1>
+            <p>Fast, reliable, and affordable PC rental for your work, study, or project. Delivered to your door.</p>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" class="form-control" placeholder="Search..." style="width: 100%; padding: 10px; border-radius: 50px;">
+            </div>
+
+            <!-- Buttons -->
+            <div class="hero-buttons">
+                <button class="btn btn-outline-light">Find a PC</button>
+                <button class="btn btn-outline-light">Location to drop</button>
+            </div>
+        </div>
+    </section>
 
 
-        <!-- my links -->
-        <a href="{% url 'add-laptop' %}">Admin Lend out your laptop</a> <br><br>
-        <a href="{% url 'userToLend' %}">User Lend out your laptop</a>  <br><br>
-        <a href="{% url 'non_company_pc' %}">Individuals Pc</a> <br><br>
-        <a href="{% url 'display' %}">VIEW AVAILABLE LAPTOPS</a>
-
-
-        <div class="container my-4">
-            <h2 class="mb-4">Top Products</h2>
-            <div class="row">
-                <!-- First Laptop -->
-                <div class="col-12 col-sm-6 col-md-3 col-lg-3">
-                    <div class="card my-2 shadow-lg" style="width: 18rem;>
-                        <img src="#" class="card-img-top" alt="V-20 Hp Nexus" />
-                        <div class="card-body">
-                            <h5 class="card-title">V-20 Hp Nexus</h5>
-                            <p class="card-text">
-                                <span class="badge bg-success">Available</span>
-                            </p>
-                            <button class="btn btn-outline-danger">
-                                <i class="far fa-heart"></i> 
-                            </button>
-                            
-                        </div>
-                    </div>
-                </div>
-        
-                <!-- Second Laptop -->
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="card my-2 shadow-lg" style="width: 100%;">
-                        <img src="#" class="card-img-top" alt="Dell XPS 13" />
-                        <div class="card-body">
-                            <h5 class="card-title">Dell XPS 13</h5>
-                            <p class="card-text">
-                                <span class="badge bg-success">Available</span>
-                            </p>
-                            <button class="btn btn-outline-secondary">
-                                <i class="bi bi-heart"></i> 
-                            </button>
-                        </div>
-                    </div>
-                </div>
-        
-                <!-- Third Laptop -->
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="card my-2 shadow-lg" style="width: 100%;">
-                        <img src="#" class="card-img-top" alt="Dell Inspiron 15" />
-                        <div class="card-body">
-                            <h5 class="card-title">Dell Inspiron 15</h5>
-                            <p class="card-text">
-                                <span class="badge bg-success">Available</span>
-                            </p>
-                            <button class="btn btn-outline-secondary">
-                                <i class="bi bi-heart"></i> 
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- fourth Laptop -->
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="card my-2 shadow-lg" style="width: 100%;">
-                        <img src="#" class="card-img-top" alt="Dell Inspiron 15" />
-                        <div class="card-body">
-                            <h5 class="card-title">Dell Inspiron 15</h5>
-                            <p class="card-text">
-                                <span class="badge bg-success">Available</span>
-                            </p>
-                            <button class="btn btn-outline-secondary">
-                                <i class="bi bi-heart"></i> 
-                            </button>
-                        </div>
-                    </div>
-                </div>
-    
-        
-
-
-
-
-
-
-
-
-
-                <section class="how-it-works py-5">
-                    <div class="container">
-                    <h2 class="text-center mb-5">How it works</h2>
-                
-                    <div class="row mb-4 border-box">
-                        <div class="col-md-4">
-                        <img src="{% static 'images/delivery home1.jpg' %}" class="img-fluid" alt="Choose Your PC" width="275px" height="183px">
-                        </div>
-                        <div class="col-md-8 d-flex flex-column justify-content-center">
-                        <h3 class="text-primary">Choose Your Pc</h3>
-                        <p>Browse our wide selection of laptops and PCs. Click on the PC that suits your rental duration.</p>
-                        </div>
-                    </div>
-                
-                    <div class="row mb-4 border-box">
-                        <div class="col-md-4 order-md-2">
-                        <img src="{% static 'images/delivery home2.jpg' %}" class="img-fluid" alt="Rental Plan & Delivery" width="275px" height="183px">
-                        </div>
-                        <div class="col-md-8 order-md-1 d-flex flex-column justify-content-center">
-                        <h3 class="text-primary">Rental Plan & Delivery</h3>
-                        <p>Select a rental plan that works for you, whether you need it for a day, week, or months. Once you lock your rental agreement, we’ll deliver the PC to your doorstep.</p>
-                        </div>
-                    </div>
-                
-                    <div class="row border-box ">
-                        <div class="col-md-4">
-                        <img src="{% static 'images/delivery home1.jpg' %}" class="img-fluid" alt="Use & Enjoy with Easy Return"  width="275px" height="183px">
-                        </div>
-                        <div class="col-md-8 d-flex flex-column justify-content-center">
-                        <h3 class="text-primary">Use & Enjoy with Easy Return</h3>
-                        <p>Use the PC for work, school, or your leisure time. When the rental period is up, schedule for pick up through your account.</p>
-                        </div>
-                    </div>
-                    </div>
-                </section>
-
-
-
-
-
-
-                <!-- Testimonial Carousels -->
-    <div class="container">
-        <h2 class="text-center mb-4">Testimonial</h2>
-
+    <div class="container mt-5">
         <div class="row">
-            <!-- Amina's Testimonial Carousel -->
-            <div class="col-md-6">
-                <div id="aminaCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <!-- First slide (Amina's content) -->
-                        <div class="carousel-item active">
-                            <div class="card shadow-lg p-3 mb-5 rounded" style="background-color: #007bff; color: white; width: 100%;">
-                                <div class="d-flex align-items-center">
-                                    <img src="images/amina bio.jpg" alt="Amina Sulia" class="rounded-circle" style="width: 50px; margin-right: 10px;">
-                                    <h5>Amina Sulia</h5>
-                                    <div class="ms-auto">
-                                        <span class="fa fa-star text-warning"></span>
-                                        <span class="fa fa-star text-warning"></span>
-                                        <span class="fa fa-star text-warning"></span>
-                                        <span class="fa fa-star text-warning"></span>
-                                        <span class="fa fa-star-half-alt text-warning"></span>
-                                    </div>
-                                </div>
-                                <p>As a student, I couldn't afford to buy a PC, but this service gave me access to the best technology at an affordable price...</p>
-                                <p class="text-start">Student</p>
-                            </div>
-                        </div>
-
-                        <!-- Second slide (blank) -->
-                        <div class="carousel-item">
-                            <div class="card shadow-lg p-3 mb-5 rounded" style="height: 300px; background-color: lightgray;">
-                                <h5 class="text-center">Blank Slide 1</h5>
-                            </div>
-                        </div>
-
-                        <!-- Third slide (blank) -->
-                        <div class="carousel-item">
-                            <div class="card shadow-lg p-3 mb-5 rounded" style="height: 300px; background-color: lightgray;">
-                                <h5 class="text-center">Blank Slide 2</h5>
-                            </div>
-                        </div>
+            <div class="col-md-3">
+                <div class="skip text-center">
+                    <div class="skip-body">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <h5 class="skip-title">Borrow anytime</h5>
                     </div>
-
-                    <!-- Carousel Controls -->
-                    <a class="carousel-control-prev" href="#aminaCarousel" role="button" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#aminaCarousel" role="button" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </a>
                 </div>
             </div>
-
-            <!-- David's Testimonial Carousel -->
-            <div class="col-md-6">
-                <div id="davidCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <!-- First slide (David's content) -->
-                        <div class="carousel-item active">
-                            <div class="card shadow-lg p-3 mb-5 rounded" style="background-color: #007bff; color: white; width: 100%;">
-                                <div class="d-flex align-items-center">
-                                    <img src="images/emmanuel pic.jpg" alt="David Emmanuel" class="rounded-circle" style="width: 50px; margin-right: 10px;">
-                                    <h5>David Emmanuel</h5>
-                                    <div class="ms-auto">
-                                        <span class="fa fa-star text-warning"></span>
-                                        <span class="fa fa-star text-warning"></span>
-                                        <span class="fa fa-star text-warning"></span>
-                                        <span class="fa fa-star text-warning"></span>
-                                        <span class="fa fa-star-half-alt text-warning"></span>
-                                    </div>
-                                </div>
-                                <p>Renting a PC was super easy and fast! I needed a laptop for a last-minute work project, and they delivered it to me the same day...</p>
-                                <p class="text-start">Trader</p>
-                            </div>
-                        </div>
-
-                        <!-- Second slide (blank) -->
-                        <div class="carousel-item">
-                            <div class="card shadow-lg p-3 mb-5 rounded" style="height: 300px; background-color: lightgray;">
-                                <h5 class="text-center">Blank Slide 1</h5>
-                            </div>
-                        </div>
-
-                        <!-- Third slide (blank) -->
-                        <div class="carousel-item">
-                            <div class="card shadow-lg p-3 mb-5 rounded" style="height: 300px; background-color: lightgray;">
-                                <h5 class="text-center">Blank Slide 2</h5>
-                            </div>
-                        </div>
+            <div class="col-md-3">
+                <div class="skip text-center">
+                    <div class="skip-body">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h5 class="skip-title">Easy to Shop</h5>
                     </div>
-
-                    <!-- Carousel Controls -->
-                    <a class="carousel-control-prev" href="#davidCarousel" role="button" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#davidCarousel" role="button" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="skip text-center">
+                    <div class="skip-body">
+                        <i class="fas fa-headset"></i>
+                        <h5 class="skip-title">24/7 Support</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="skip text-center">
+                    <div class="skip-body">
+                        <i class="fas fa-box-open"></i>
+                        <h5 class="skip-title">Lend your goods</h5>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-              
+    
 
-              
 
- <!-- Footer -->
-    <footer class="py-3 text-center border-top">
-        <div class="container">
-            <p>&copy; 2024 EasyLendPc. All rights reserved.</p>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div><b>Filter option</b></div>
+                    <div>Showing 1-15 of 400 results</div>
+                    <div>
+                        Sort by:
+                        <select>
+                            <option>Default settings</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+        <div class="row product-grid">
+            <div class="col-md-4">
+                <div class="product-item">
+                    <i class="fas fa-heart heart-icon"></i>
+                    <img src="{% static 'images/demo.jpg' %}" alt="HP Spectre 4D">
+                    <h5>HP Spectre 4D</h5>
+                    <p><span class="status-dot"></span>Available</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="product-item">
+                    <i class="fas fa-heart heart-icon"></i>
+                    <img src="{% static 'images/demo.jpg' %}" alt="Lenovo Legion 5">
+                    <h5>Lenovo Legion 5</h5>
+                    <p><span class="status-dot"></span>Available</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="product-item">
+                    <i class="fas fa-heart heart-icon"></i>
+                    <img src="{% static 'images/demo.jpg' %}" alt="Lenovo Legion 4">
+                    <h5>Lenovo Legion 4</h5>
+                    <p><span class="status-dot"></span>Available</p>
+                </div>
+            </div>
+            <!-- Add more products as needed -->
+        </div>
     </div>
+
+
+
+
+
+
+
+
+
+            <section class="how-it-works py-5">
+                <div class="container">
+                  <h2 class="text-center mb-5">How it works</h2>
+              
+                  <div class="row mb-4 border-box">
+                    <div class="col-md-4">
+                      <img src="{% static 'images/delivery home1.jpg' %}" class="img-fluid" alt="Choose Your PC">
+                    </div>
+                    <div class="col-md-8 d-flex flex-column justify-content-center">
+                      <h3 class="text-primary">Choose Your Pc</h3>
+                      <p>Browse our wide selection of laptops and PCs. Click on the PC that suits your rental duration.</p>
+                    </div>
+                  </div>
+              
+                  <div class="row mb-4 border-box">
+                    <div class="col-md-4 order-md-2">
+                      <img src="{% static 'images/delivery home2.jpg' %}" class="img-fluid" alt="Rental Plan & Delivery">
+                    </div>
+                    <div class="col-md-8 order-md-1 d-flex flex-column justify-content-center">
+                      <h3 class="text-primary">Rental Plan & Delivery</h3>
+                      <p>Select a rental plan that works for you, whether you need it for a day, week, or months. Once you lock your rental agreement, we’ll deliver the PC to your doorstep.</p>
+                    </div>
+                  </div>
+              
+                  <div class="row border-box ">
+                    <div class="col-md-4">
+                      <img src="{% static 'images/delivery home1.jpg' %}" class="img-fluid" alt="Use & Enjoy with Easy Return">
+                    </div>
+                    <div class="col-md-8 d-flex flex-column justify-content-center">
+                      <h3 class="text-primary">Use & Enjoy with Easy Return</h3>
+                      <p>Use the PC for work, school, or your leisure time. When the rental period is up, schedule for pick up through your account.</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+
+
+
+
+
+              <!-- Testimonial Carousels -->
+<div class="container">
+    <h2 class="text-center mb-4">Testimonial</h2>
+
+    <div class="row">
+        <!-- Amina's Testimonial Carousel -->
+        <div class="col-md-6">
+            <div id="aminaCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- First slide (Amina's content) -->
+                    <div class="carousel-item active">
+                        <div class="card shadow-lg p-3 mb-5 rounded" style="background-color: #007bff; color: white; width: 100%;">
+                            <div class="d-flex align-items-center">
+                                <img src="{% static 'images/amina bio.jpg' %}" alt="Amina Sulia" class="rounded-circle" style="width: 50px; margin-right: 10px;">
+                                <h5>Amina Sulia</h5>
+                                <div class="ms-auto">
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star-half-alt text-warning"></span>
+                                </div>
+                            </div>
+                            <p>As a student, I couldn't afford to buy a PC, but this service gave me access to the best technology at an affordable price...</p>
+                            <p class="text-start">Student</p>
+                        </div>
+                    </div>
+
+                    <!-- Second slide (blank) -->
+                    <div class="carousel-item">
+                        <div class="card shadow-lg p-3 mb-5 rounded" style="height: 300px; background-color: lightgray;">
+                            <h5 class="text-center">Blank Slide 1</h5>
+                        </div>
+                    </div>
+
+                    <!-- Third slide (blank) -->
+                    <div class="carousel-item">
+                        <div class="card shadow-lg p-3 mb-5 rounded" style="height: 300px; background-color: lightgray;">
+                            <h5 class="text-center">Blank Slide 2</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Controls -->
+                <a class="carousel-control-prev" href="#aminaCarousel" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#aminaCarousel" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- David's Testimonial Carousel -->
+        <div class="col-md-6">
+            <div id="davidCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- First slide (David's content) -->
+                    <div class="carousel-item active">
+                        <div class="card shadow-lg p-3 mb-5 rounded" style="background-color: #007bff; color: white; width: 100%;">
+                            <div class="d-flex align-items-center">
+                                <img src="{% static 'images/emmanuel pic.jpg' %}" alt="David Emmanuel" class="rounded-circle" style="width: 50px; margin-right: 10px;">
+                                <h5>David Emmanuel</h5>
+                                <div class="ms-auto">
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star-half-alt text-warning"></span>
+                                </div>
+                            </div>
+                            <p>Renting a PC was super easy and fast! I needed a laptop for a last-minute work project, and they delivered it to me the same day...</p>
+                            <p class="text-start">Trader</p>
+                        </div>
+                    </div>
+
+                    <!-- Second slide (blank) -->
+                    <div class="carousel-item">
+                        <div class="card shadow-lg p-3 mb-5 rounded" style="height: 300px; background-color: lightgray;">
+                            <h5 class="text-center">Blank Slide 1</h5>
+                        </div>
+                    </div>
+
+                    <!-- Third slide (blank) -->
+                    <div class="carousel-item">
+                        <div class="card shadow-lg p-3 mb-5 rounded" style="height: 300px; background-color: lightgray;">
+                            <h5 class="text-center">Blank Slide 2</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Controls -->
+                <a class="carousel-control-prev" href="#davidCarousel" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#davidCarousel" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+              
+
+<div class="container mt-5">
+    <div class="subscription-section">
+        <div class="subscription-text">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Subscribe to our email newsletter today to receive updates on our latest news.</p>
+            <form class="form-inline">
+                <div class="form-group mb-2">
+                    <input type="email" class="form-control" placeholder="Enter your email">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Subscribe</button>
+            </form>
+        </div>
+        <div class="subscription-image">
+            <img src="{% static 'images/newsletter.jpg' %}" alt="image">
+        </div>
+    </div>
+</div>
+
+         <br><br>     
+<!-- footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <h5>Information</h5>
+                <ul>
+                    <li>Delivery Information</li>
+                    <li>Offers</li>
+                    <li>Return Policy</li>
+                    <li>Shipping Information</li>
+                    <li>Track your order</li>
+                    <li>Catalogues</li>
+                    <li>Help Center</li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <h5>Our story</h5>
+                <ul>
+                    <li>About us</li>
+                    <li>Our Company</li>
+                    <li>Coreer</li>
+                    <li>Financing</li>
+                    <li>Location</li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <h5>My account</h5>
+                <ul>
+                    <li>My Order</li>
+                    <li>24/7 call available</li>
+                    <li>Complains</li>
+                    <li>Advertise with us</li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <h5>Resource</h5>
+                <ul>
+                    <li>Free Design Service</li>
+                    <li>Troder Resource</li>
+                    <li>Become an Attllate</li>
+                    <li>Creator Program</li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <h5>Contact Us</h5>
+                <ul>
+                    <li>olatunjinasir58@gmail.com</li>
+                    <li>08101306497</li>
+                    <li>Follow us on social media</li>
+                </ul>
+            </div>
+            <!-- <div class="col-md-2 text-right">
+                <div class="contact-info">
+                    +2349043356791
+                </div>
+            </div> -->
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p class="copyright">
+                    &copy; 2024 EasyLendPc. All rights reserved.
+                </p>
+            </div>
+            <div class="col-md-6 text-right">
+                <p>
+                    <a href="#">Privacy</a> | <a href="#">Terms & Conditions</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
 </body>
 </html>

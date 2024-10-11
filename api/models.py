@@ -28,7 +28,7 @@ class LendOutPc(models.Model):
     image = models.ImageField(null=False, blank=True, upload_to="images/")
 
     def __str__(self):
-        return f"{self.laptop_name} {self.owner}"
+        return f"{self.pc_name} {self.pc_owner}"
 
     def get_absolute_url(self):
         return reverse('display')

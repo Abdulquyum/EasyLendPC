@@ -1,0 +1,130 @@
+/* header */
+.link{
+    text-decoration: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding-right: 10px;
+}
+
+
+.product-detail {
+    margin-top: 20px;
+}
+.product-detail h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+.product-detail p {
+    margin-bottom: 20px;
+}
+.product-detail .form-group {
+    margin-bottom: 15px;
+}
+.product-detail .btn {
+    margin-right: 10px;
+}
+.product-detail .status {
+    color: green;
+    font-weight: bold;
+}
+.product-detail .sku {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+.product-detail .share-icons i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+.product-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.product-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+.product-features {
+    margin-top: 20px;
+}
+.product-features h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+.product-features p {
+    margin-bottom: 10px;
+}
+.product-features ul {
+    list-style-type: none;
+    padding: 0;
+}
+.product-features ul li {
+    margin-bottom: 10px;
+}
+
+
+
+.customer-reviews {
+    margin-top: 20px;
+}
+.customer-reviews h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+.review {
+    margin-bottom: 20px;
+}
+.review h5 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.review p {
+    margin-bottom: 10px;
+}
+.review .stars {
+    color: gold;
+    margin-bottom: 10px;
+}
+
+
+
+.similar-products {
+    margin-top: 20px;
+}
+.similar-products h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+.product-item {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.product-item img {
+    max-width: 100%;
+    height: auto;
+}
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+.footer .footer-links {
+    margin-bottom: 20px;
+}
+.footer .footer-links h5 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.footer .footer-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+.footer .footer-links ul li {
+    margin-bottom: 10px;
+}
+.footer .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
