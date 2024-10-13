@@ -15,6 +15,6 @@ urlpatterns = [
     path('non_company_pc/detail/<int:pk>', UserLaptopDetails.as_view(), name="nonCompanyPc-details"), # name - link to be referenced in html file
     path('administration/', views.administration, name='administration'),
     path('aboutUs/', views.about, name='about'),
-    path('non_company_pc/detail/<int:pk>/edit', UserDeleteLaptop.as_view(), name='edit_userPc'),
-    path('non_company_pc/detail/recycle/<int:pk>', UserUpdateLaptop.as_view(), name='delete_userPc')
+    path('detail/edit/<int:pk>', UserDeleteLaptop.as_view(), name='delete_userPc'),
+    path('detail/<int:pk>/delete', UserUpdateLaptop.as_view(), name='edit_userPc')
 ]

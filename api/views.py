@@ -106,6 +106,7 @@ class UserLaptopDetails(DetailView):
     #Give details of individual laptops when clicked
     model = LendOutPc
     template_name = 'non_company_details.html'
+    context_object_name = 'userpc'
 
 class UserUpdateLaptop(UpdateView):
     # Edit and update laptop details available for lend

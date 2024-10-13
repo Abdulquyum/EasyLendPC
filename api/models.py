@@ -31,4 +31,4 @@ class LendOutPc(models.Model):
         return f"{self.pc_name} {self.pc_owner}"
 
     def get_absolute_url(self):
-        return reverse('display')
+        return reverse('non_company_pc')

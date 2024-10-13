@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'bootstrap/bootstrap-5.3.3-dist/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <link rel="stylesheet" href="{% static 'fontawesome/css/all.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
@@ -20,9 +23,9 @@
                 <img src="{% static 'images/laptop-image.jpg' %}" alt="" height="40"><b m-3>EasyLendPc</b>
             </div>
             <nav>
-                <a class="link" href="main.html" class="mx-2">Home</a>
-                <a class="link" href="{% url 'display'%}" class="mx-2">Product</a>
-                <a class="link" href="#" class="mx-2">About Us</a>
+                <a class="link" href="{%url 'home'%}" class="mx-2">Home</a>
+                <a class="link" href="{%url 'display'%}" class="mx-2">Product</a>
+                <a class="link" href="{%url 'about'%}" class="mx-2">About Us</a>
                 <a class="link" href="#" class="mx-2">Blog</a>
                 <a class="link" href="#" class="mx-2">Contact Us</a>
             </nav>
@@ -81,10 +84,10 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="skip text-center">
+                <div class="skip text-center"><a href="{% url 'userToLend' %}">
                     <div class="skip-body">
                         <i class="fas fa-box-open"></i>
-                        <h5 class="skip-title">Lend your goods</h5>
+                        <h5 class="skip-title">Lend your goods</h5></a>
                     </div>
                 </div>
             </div>

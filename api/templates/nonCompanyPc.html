@@ -1,23 +1,156 @@
-<h1>LIST OF LAPTOPS Not uploaded by EasyLendPC </h1>
-
-<ul>
+{% load static %} 
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>display page</title>
+      <link rel="stylesheet" href="{% static 'bootstrap/bootstrap-5.3.3-dist/css/bootstrap.css' %}">
+      <link rel="stylesheet" href="{% static 'fontawesome/css/all.css' %}">
+      <link rel="stylesheet" href="{% static 'css/base.css' %}">
+      <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  </head>
+  <body>
+    <header class="p-3 border-bottom">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo">
+                <img src="images/laptop-image.jpg" alt="laptop"><b m-3>EasyLendPc</b>
+            </div>
+            <nav>
+                <a class="link" href="{%url 'home'%}" class="mx-2">Home</a>
+                <a class="link" href="{%url 'display'%}" class="mx-2">Product</a>
+                <a class="link" href="{%url 'about'%}" class="mx-2">About Us</a>
+                <a class="link" href="#" class="mx-2">Blog</a>
+                <a class="link" href="#" class="mx-2">Contact Us</a>
+            </nav>
+            <div class="user-actions">
+                <a class="link" href="#" class="me-3">My Account</a>
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+        </div>
+    </header>
+<!-- <ul>
     {% for userpc in object_list %}
         <li>
             <a href="{% url 'nonCompanyPc-details' userpc.pk %}">{{ userpc.pc_name }}</a> - 
-            <small><a href="{% url 'update_laptop' userpc.pk %}">[edit]</a></small> - 
-            <a href="{% url 'delete_laptop' userpc.pk %}">[delete]</a><br>
+            <small><a href="{% url 'edit_userPc' userpc.pk %}">[edit]</a></small> <br>
             <h3>Owned By: {{ userpc.pc_owner}}</h3>
-            {% if userpc.image %} 
-                <img src="{{ userpc.image.url }}" alt="laptop" width="70px">
-            {% else %}
-                <img src="" alt="image Unvailable"> <br>
-            {% endif %} <br>
-            {{ userpc.pc_description}} <br>
+                {% if userpc.image %} 
+                    <img src="{{ userpc.image.url }}" alt="laptop" width="70px">
+                {% else %}
+                    <img src="" alt="image Unvailable"> <br>
+                {% endif %} <br>
+                {{ userpc.pc_description}} <br>
             <strong>status: {{ userpc.pc_status}}</strong>
             <h3>Owner Phone Number: {{ userpc.phone_number}}</h3>
         </li> <br><br>
     {% endfor %}
 </ul>
 <a href="{% url 'display' %}">back</a> -
-<a href="{% url 'home' %}">home</a> <br><br>
+<a href="{% url 'home' %}">home</a> <br><br> -->
+    <div class="container">
+    <h1>LIST OF LAPTOPS Not uploaded by EasyLendPC </h1>
 
+    {% for userpc in object_list %}
+    <div class="container product-detail">
+        <div class="row" style="padding-bottom: 40px;">
+            <div class="col-md-6 product-image">
+                {% if userpc.image %} 
+                    <img src="{{ userpc.image.url }}" alt="laptop" width="500px" height="300px">
+                {% else %}
+                    <img src="" alt="image Unvailable"> <br>
+                {% endif %}<br> <br>
+            </div>
+            <div class="col-md-6">    
+                <a href="{% url 'nonCompanyPc-details' userpc.pk %}">{{ userpc.pc_name }}</a> - 
+                <small><a href="{% url 'edit_userPc' userpc.pk %}">[edit]</a></small> <br>
+                <h3>Owned By: {{ userpc.pc_owner}}</h3>
+                {{ userpc.pc_description}} <br>
+                <strong>status: {{ userpc.pc_status}}</strong>
+                <h3>Owner's Phone Number: {{ userpc.phone_number}}</h3>
+                <br><br>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <a href="{% url 'display' %}">back</a> -
+    <a href="{% url 'home' %}">home</a> <br><br>
+
+    </div>
+    
+
+    
+    <!-- footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <h5>Information</h5>
+                    <ul>
+                        <li>Delivery Information</li>
+                        <li>Offers</li>
+                        <li>Return Policy</li>
+                        <li>Shipping Information</li>
+                        <li>Track your order</li>
+                        <li>Catalogues</li>
+                        <li>Help Center</li>
+                    </ul>
+                </div> \
+                <div class="col-md-2">
+                    <h5>Our story</h5>
+                    <ul>
+                        <li>About us</li>
+                        <li>Our Company</li>
+                        <li>Coreer</li>
+                        <li>Financing</li>
+                        <li>Location</li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h5>My account</h5>
+                    <ul>
+                        <li>My Order</li>
+                        <li>24/7 call available</li>
+                        <li>Complains</li>
+                        <li>Advertise with us</li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h5>Resource</h5>
+                    <ul>
+                        <li>Free Design Service</li>
+                        <li>Troder Resource</li>
+                        <li>Become an Attllate</li>
+                        <li>Creator Program</li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h5>Contact Us</h5>
+                    <ul>
+                        <li>easylendpc@gmail.com</li>
+                        <li>09078417060</li>
+                    </ul>
+                </div>
+                <!-- <div class="col-md-2 text-right">
+                    <div class="contact-info">
+                        +2349043356791
+                    </div>
+                </div> -->
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="copyright">
+                        &copy; 2024 EasyLendPc. All rights reserved.
+                    </p>
+                </div>
+                <div class="col-md-6 text-right">
+                    <p>
+                        <a href="#">Privacy</a> | <a href="#">Terms & Conditions</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

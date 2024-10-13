@@ -6,10 +6,9 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>display page</title>
       <link rel="stylesheet" href="{% static 'bootstrap/bootstrap-5.3.3-dist/css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'fontawesome/css/all.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
-    <link rel="stylesheet" href="{% static 'css/laptop_details.css' %}">
+      <link rel="stylesheet" href="{% static 'fontawesome/css/all.css' %}">
+      <link rel="stylesheet" href="{% static 'css/base.css' %}">
+      <link rel="stylesheet" href="{% static 'css/home.css' %}">
   </head>
   <body>
       <header class="p-3 border-bottom">
@@ -18,9 +17,9 @@
                   <img src="images/laptop-image.jpg" alt="laptop"><b m-3>EasyLendPc</b>
               </div>
               <nav>
-                  <a class="link" href="#" class="mx-2">Home</a>
-                  <a class="link" href="#" class="mx-2">Product</a>
-                  <a class="link" href="#" class="mx-2">About Us</a>
+                  <a class="link" href="{%url 'home'%}" class="mx-2">Home</a>
+                  <a class="link" href="{%url 'display'%}" class="mx-2">Product</a>
+                  <a class="link" href="{%url 'about'%}" class="mx-2">About Us</a>
                   <a class="link" href="#" class="mx-2">Blog</a>
                   <a class="link" href="#" class="mx-2">Contact Us</a>
               </nav>
@@ -36,7 +35,7 @@
           <div class="row">
               <div class="col-md-6 product-image">
                 {% if laptop.image %} 
-                    <img src="{{ laptop.image.url }}" alt="laptop">
+                    <img src="{{ laptop.image.url }}" alt="laptop" width="500px" height="300px">
                 {% else %}
                     <img src="" alt="image Unvailable"> <br>
                 {% endif %}
