@@ -20,64 +20,72 @@
                   <a class="link" href="{%url 'home'%}" class="mx-2">Home</a>
                   <a class="link" href="{%url 'display'%}" class="mx-2">Product</a>
                   <a class="link" href="{%url 'about'%}" class="mx-2">About Us</a>
-                  <a class="link" href="#" class="mx-2">Blog</a>
-                  <a class="link" href="#" class="mx-2">Contact Us</a>
-              </nav>
-              <div class="user-actions">
-                  <a class="link" href="#" class="me-3">My Account</a>
-                  <i class="fas fa-shopping-cart"></i>
-              </div>
+                  {% if user.is_authenticated %}
+                            <a class="link" href="{%url 'logout'%}" class="mx-2">Log Out</a>
+                        {% else %}
+                            <a class="link" href="{%url 'signup'%}" class="mx-2">Sign Up</a>
+                            <a class="link" href="{%url 'login'%}" class="mx-2">Log In</a>
+                        {% endif %}
+                    </nav>
+                    {% if user.is_authenticated %}
+                    <div class="user-actions">
+                        <a class="link" href="#" class="me-3">My Account</a>
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    {% endif %}
           </div>
       </header>
       
-      
-      <div class="container product-detail">
-          <div class="row">
-              <div class="col-md-6 product-image">
-                {% if laptop.image %} 
-                    <img src="{{ laptop.image.url }}" alt="laptop" width="500px" height="300px">
-                {% else %}
-                    <img src="" alt="image Unvailable"> <br>
-                {% endif %}
-              </div>
-              <div class="col-md-6">
-                <h3>Owned By: {{ laptop.owner}}</h3>
-                <h2> {{ laptop.name }} - <a href="{% url 'update_laptop' laptop.pk %}">[edit]</a> - 
-                    <a href="{% url 'delete_laptop' laptop.pk %}">[delete]</a>
-                </h2>
-                  <p>{{ laptop.description }}</p>
-                  <div class="form-group">
-                      <label for="color">Color:</label>
-                      <select id="color" class="form-control">
-                          <option>Silver</option>
-                          <option>Black</option>
-                      </select>
-                  </div>
-                  <div class="form-group">
-                      <label for="keyboard">Keyboard Language:</label>
-                      <select id="keyboard" class="form-control">
-                          <option>English</option>
-                          <option>French</option>
-                      </select>
-                  </div>
-                  <div class="form-group">
-                      <label for="quantity">Quantity:</label>
-                      <input type="number" id="quantity" class="form-control" value="1">
-                  </div>
-                  <p class="status">{{ laptop.status }}</p>
-                  <button class="btn btn-primary"><a href="http://t.me/easylendpc_bot" target="_blank">Check out</a></button>
-                  <button class="btn btn-secondary"><a href="{% url 'display' %}">back</a></button>
-                  <p class="sku">SKU: EW-12024</p>
-                  <div class="share-icons">
-                      <span>Share:</span>
-                      <i class="fab fa-facebook"></i>
-                      <i class="fab fa-twitter"></i>
-                      <i class="fab fa-instagram"></i>
-                  </div>
-              </div>
-          </div>
-      </div>
-  
+      <div style="padding: 30px 0;">
+        <div class="container product-detail">
+            <div class="row">
+                <div class="col-md-6 product-image">
+                    {% if laptop.image %} 
+                        <img src="{{ laptop.image.url }}" alt="laptop" width="500px" height="300px">
+                    {% else %}
+                        <img src="" alt="image Unvailable"> <br>
+                    {% endif %}
+                </div>
+                <div class="col-md-6">
+                    <h2> {{ laptop.name }} </h2>
+                    {% if user.id == 1 %}
+                        <a href="{% url 'update_laptop' laptop.pk %}">[edit]</a> - 
+                        <a href="{% url 'delete_laptop' laptop.pk %}">[delete]</a>
+                    {% endif %} <br>
+                    <h3>Owned By: {{ laptop.owner}}</h3>
+                    <p>{{ laptop.description }}</p>
+                    <div class="form-group">
+                        <label for="color">Color:</label>
+                        <select id="color" class="form-control">
+                            <option>Silver</option>
+                            <option>Black</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="keyboard">Keyboard Language:</label>
+                        <select id="keyboard" class="form-control">
+                            <option>English</option>
+                            <option>French</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" class="form-control" value="1">
+                    </div>
+                    <p class="status">{{ laptop.status }}</p>
+                    <button class="btn btn-primary"><a href="http://t.me/easylendpc_bot" target="_blank">Check out</a></button>
+                    <button class="btn btn-secondary"><a href="{% url 'display' %}">back</a></button>
+                    <p class="sku">SKU: EW-12024</p>
+                    <div class="share-icons">
+                        <span>Share:</span>
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
   
   
       <div class="container product-features">

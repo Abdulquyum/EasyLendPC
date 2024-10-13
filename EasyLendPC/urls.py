@@ -23,5 +23,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('api.urls')),
+    path('auth/', include('django.contrib.auth.urls')),
+    path('auth/', include('authentication.urls')),
     path('bot/', views.telegram_bot_webhook, name='telegram_bot_webhook'),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

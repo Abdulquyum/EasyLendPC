@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/add_laptop.css' %}">
+    <title>Login page</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <h1>LOG IN</h1>
+            <div class="form-group">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %} <!-- security purpose -->
+                    {{ form.as_p }} <br> <!-- duplicate as it was in the models -->
+                    <button>Log In</button>
+                </form>
+            </div>
+        </div>
+    <a href="{% url 'home' %}">home</a> <br><br>
+    </div>
+</body>
+</html>

@@ -66,6 +66,7 @@ class DisplayLaptop(ListView):
     # list every available laptops to te display page
     model = Laptop
     template_name = 'display.html'
+    ordering = ['-id']
 
 class LaptopDetails(DetailView):
     #Give details of individual laptops when clicked
@@ -100,6 +101,7 @@ class UserDisplayLaptop(ListView):
     # list every available laptops to te display page
     model = LendOutPc
     template_name = 'nonCompanyPc.html'
+    ordering = ['-id']
 
 
 class UserLaptopDetails(DetailView):

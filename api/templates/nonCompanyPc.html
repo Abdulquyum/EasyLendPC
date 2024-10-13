@@ -20,13 +20,19 @@
                 <a class="link" href="{%url 'home'%}" class="mx-2">Home</a>
                 <a class="link" href="{%url 'display'%}" class="mx-2">Product</a>
                 <a class="link" href="{%url 'about'%}" class="mx-2">About Us</a>
-                <a class="link" href="#" class="mx-2">Blog</a>
-                <a class="link" href="#" class="mx-2">Contact Us</a>
-            </nav>
-            <div class="user-actions">
-                <a class="link" href="#" class="me-3">My Account</a>
-                <i class="fas fa-shopping-cart"></i>
-            </div>
+                {% if user.is_authenticated %}
+                            <a class="link" href="{%url 'logout'%}" class="mx-2">Log Out</a>
+                        {% else %}
+                            <a class="link" href="{%url 'signup'%}" class="mx-2">Sign Up</a>
+                            <a class="link" href="{%url 'login'%}" class="mx-2">Log In</a>
+                        {% endif %}
+                    </nav>
+                    {% if user.is_authenticated %}
+                    <div class="user-actions">
+                        <a class="link" href="#" class="me-3">My Account</a>
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    {% endif %}
         </div>
     </header>
 <!-- <ul>
@@ -49,34 +55,58 @@
 <a href="{% url 'display' %}">back</a> -
 <a href="{% url 'home' %}">home</a> <br><br> -->
     <div class="container" style="padding: 30px 0;">
-    <h1>NON COMPANY LAPTOPS</h1>
+    <h1 style="text-align: center; padding-bottom: 20px;">NON COMPANY LAPTOPS</h1>
 
-    {% for userpc in object_list %}
-    <div class="container product-detail">
-        <div class="row" style="padding-bottom: 40px;">
-            <div class="col-md-6 product-image">
-                {% if userpc.image %} 
-                    <img src="{{ userpc.image.url }}" alt="laptop" width="500px" height="300px">
-                {% else %}
-                    <img src="" alt="image Unvailable"> <br>
-                {% endif %}<br> <br>
-            </div>
-            <div class="col-md-6">    
-                <a href="{% url 'nonCompanyPc-details' userpc.pk %}">{{ userpc.pc_name }}</a> - 
-                <small><a href="{% url 'edit_userPc' userpc.pk %}">[edit]</a></small> <br>
-                <h3>Owned By: {{ userpc.pc_owner}}</h3>
-                {{ userpc.pc_description}} <br>
-                <strong>status: {{ userpc.pc_status}}</strong>
-                <h3>Owner's Phone Number: {{ userpc.phone_number}}</h3>
-                <br><br>
+
+    {% if user.is_authenticated %}
+        {% for userpc in object_list %}
+        <div class="container product-detail">
+            <div class="row" style="padding-bottom: 40px;">
+                <div class="col-md-6 product-image">
+                    {% if userpc.image %} 
+                        <img src="{{ userpc.image.url }}" alt="laptop" width="500px" height="300px">
+                    {% else %}
+                        <img src="" alt="image Unvailable"> <br>
+                    {% endif %}<br> <br>
+                </div>
+                <div class="col-md-6">    
+                    <h2><a href="{% url 'nonCompanyPc-details' userpc.pk %}">{{ userpc.pc_name }}</a></h2> <br>
+                    <h3>Owned By: {{ userpc.pc_owner}}</h3>
+                    {{ userpc.pc_description}} <br>
+                    <strong>status: {{ userpc.pc_status}}</strong>
+                    <h4>Owner's Phone Number: {{ userpc.phone_number}}</h4>
+                    <br><br>
+                </div>
             </div>
         </div>
-    </div>
-    {% endfor %}
-    <a href="{% url 'display' %}">back</a> -
-    <a href="{% url 'home' %}">home</a> <br><br>
-
-    </div>
+        {% endfor %}
+        <a href="{% url 'display' %}">back</a> -
+        <a href="{% url 'home' %}">home</a> <br><br>
+    {% else %}
+        {% for userpc in object_list %}
+        <div class="container product-detail">
+            <div class="row" style="padding-bottom: 40px;">
+                <div class="col-md-6 product-image">
+                    {% if userpc.image %} 
+                        <img src="{{ userpc.image.url }}" alt="laptop" width="500px" height="300px">
+                    {% else %}
+                        <img src="" alt="image Unvailable"> <br>
+                    {% endif %}<br> <br>
+                </div>
+                <div class="col-md-6">    
+                    <h2>{{ userpc.pc_name }}</h2> <br>
+                    <h3>Owned By: {{ userpc.pc_owner}}</h3>
+                    {{ userpc.pc_description}} <br>
+                    <strong>status: {{ userpc.pc_status}}</strong>
+                    <h5>Owner's Number: {{ userpc.phone_number}}</h5>
+                    <br><br>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <a href="{% url 'display' %}">back</a> -
+        <a href="{% url 'home' %}">home</a> <br><br>
+    {% endif %}
     
 
     

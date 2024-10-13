@@ -16,17 +16,23 @@
             <div class="container d-flex justify-content-between align-items-center">
                 <div class="logo">
                     <img src="{% static 'images/laptop-image.jpg' %}" alt="" height="40"><b m-3>EasyLendPc</b>                </div>
-                <nav>
-                    <a class="link" href="{%url 'home'%}" class="mx-2">Home</a>
-                    <a class="link" href="{%url 'display'%}" class="mx-2">Product</a>
-                    <a class="link" href="{%url 'about'%}" class="mx-2">About Us</a>
-                    <a class="link" href="#" class="mx-2">Blog</a>
-                    <a class="link" href="#" class="mx-2">Contact Us</a>
-                </nav>
-                <div class="user-actions">
-                    <a class="link" href="#" class="me-3">My Account</a>
-                    <i class="fas fa-shopping-cart"></i>
-                </div>
+                    <nav>
+                        <a class="link" href="{%url 'home'%}" class="mx-2">Home</a>
+                        <a class="link" href="{%url 'display'%}" class="mx-2">Product</a>
+                        <a class="link" href="{%url 'about'%}" class="mx-2">About Us</a>
+                        {% if user.is_authenticated %}
+                            <a class="link" href="{%url 'logout'%}" class="mx-2">Log Out</a>
+                        {% else %}
+                            <a class="link" href="{%url 'signup'%}" class="mx-2">Sign Up</a>
+                            <a class="link" href="{%url 'login'%}" class="mx-2">Log In</a>
+                        {% endif %}
+                    </nav>
+                    {% if user.is_authenticated %}
+                    <div class="user-actions">
+                        <a class="link" href="#" class="me-3">My Account</a>
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    {% endif %}
             </div>
         </header>
     <!-- <h1>LIST OF LAPTOPS AND THEIR STATUS</h1>
@@ -49,34 +55,60 @@
     </ul>
     <a href="{% url 'non_company_pc' %}">Next</a> <br><br> -->
         
-        <div class="container" style="padding: 30px 0;">
-        <h1>EASYLENDPC LAPTOPS</h1>
+        <div style="padding: 30px 0;">
+            <h1 style="text-align: center; padding-bottom: 20px;">EASYLENDPC LAPTOPS</h1>
 
-
-        {% for laptop in object_list %}
-        <div class="container product-detail">
-            <div class="row" style="padding-bottom: 40px;">
-                <div class="col-md-6 product-image">
-                    {% if laptop.image %} 
-                    <img src="{{ laptop.image.url }}" alt="laptop" width="500px" height="300px">
-                    {% else %}
-                    <img src="" alt="image Unvailable"> <br>
-                    {% endif %} <br>
+            {% if user.is_authenticated %}
+                {% for laptop in object_list %}
+                <div class="container product-detail">
+                    <div class="row" style="padding-bottom: 40px;">
+                        <div class="col-md-6 product-image">
+                            {% if laptop.image %} 
+                            <img src="{{ laptop.image.url }}" alt="laptop" width="500px" height="300px">
+                            {% else %}
+                            <img src="" alt="image Unvailable"> <br>
+                            {% endif %} <br>
+                        </div>
+                        <div class="col-md-6">    
+                            <h2><a href="{% url 'laptop-details' laptop.pk %}">{{ laptop.name }}</a></h2> <br>
+                            <h4>Owned By: {{ laptop.owner}}</h4>
+                            
+                            {{ laptop.description|slice:":200" }} <br>
+                            <strong>status: {{ laptop.status}}</strong>
+                        <br><br>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">    
-                    <a href="{% url 'laptop-details' laptop.pk %}">{{ laptop.name }}</a> - 
-                    <small><a href="{% url 'update_laptop' laptop.pk %}">[edit]</a></small> <br>
-                    <h4>Owned By: {{ laptop.owner}}</h4>
-                    
-                    {{ laptop.description|slice:":200" }} <br>
-                    <strong>status: {{ laptop.status}}</strong>
-                <br><br>
+                {% endfor %}
+                <a href="{% url 'non_company_pc' %}">Next</a> <br><br>
                 </div>
-            </div>
+            {% else %}
+                {% for laptop in object_list %}
+                <div class="container product-detail">
+                    <div class="row" style="padding-bottom: 40px;">
+                        <div class="col-md-6 product-image">
+                            {% if laptop.image %} 
+                            <img src="{{ laptop.image.url }}" alt="laptop" width="500px" height="300px">
+                            {% else %}
+                            <img src="" alt="image Unvailable"> <br>
+                            {% endif %} <br>
+                        </div>
+                        <div class="col-md-6">    
+                            <h2>{{ laptop.name }}</h2> <br>
+                            <h4>Owned By: {{ laptop.owner}}</h4>
+                            
+                            {{ laptop.description|slice:":200" }} <br>
+                            <strong>status: {{ laptop.status}}</strong>
+                        <br><br>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <a href="{% url 'non_company_pc' %}">Next</a> <br><br>
+                {% endif %}
         </div>
-        {% endfor %}
-        <a href="{% url 'non_company_pc' %}">Next</a> <br><br>
-        </div>
+            
+            
         
 
         <!-- <a href="{% url 'non_company_pc' %}">Next</a> <br><br> -->

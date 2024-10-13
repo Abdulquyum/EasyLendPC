@@ -1,5 +1,124 @@
-<a href="{% url 'add-laptop' %}">Admin Lend out your laptop</a> <br><br>
-<a href="{% url 'userToLend' %}">User Lend out your laptop</a>  <br><br>
-<a href="{% url 'non_company_pc' %}">Individuals Pc</a> <br><br>
-<a href="{% url 'display' %}">VIEW AVAILABLE LAPTOPS</a>
-<a href="{% url 'display' %}">Feedbacks</a>
+{% load static %} 
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>display page</title>
+      <link rel="stylesheet" href="{% static 'bootstrap/bootstrap-5.3.3-dist/css/bootstrap.css' %}">
+      <link rel="stylesheet" href="{% static 'fontawesome/css/all.css' %}">
+      <link rel="stylesheet" href="{% static 'css/base.css' %}">
+      <link rel="stylesheet" href="{% static 'css/home.css' %}">
+      <link rel="stylesheet" href="{% static 'css/administration.css' %}">
+  </head>
+  <body>
+    <div class="container">
+      <header class="p-3 border-bottom">
+          <div class="container d-flex justify-content-between align-items-center">
+              <div class="logo">
+                  <img src="images/laptop-image.jpg" alt="laptop"><b m-3>EasyLendPc</b>
+              </div>
+              <nav>
+                  <a class="link" href="{%url 'home'%}" class="mx-2">Home</a>
+                  <a class="link" href="{%url 'display'%}" class="mx-2">Product</a>
+                  <a class="link" href="{%url 'about'%}" class="mx-2">About Us</a>
+                  {% if user.is_authenticated %}
+                            <a class="link" href="{%url 'logout'%}" class="mx-2">Log Out</a>
+                        {% else %}
+                            <a class="link" href="{%url 'signup'%}" class="mx-2">Sign Up</a>
+                            <a class="link" href="{%url 'login'%}" class="mx-2">Log In</a>
+                        {% endif %}
+                    </nav>
+                    {% if user.is_authenticated %}
+                    <div class="user-actions">
+                        <a class="link" href="#" class="me-3">My Account</a>
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    {% endif %}
+          </div>
+      </header>
+ 
+        <div class="banner">
+            <a class="admin" href="{% url 'add-laptop' %}">Admin Lend out your laptop</a> <br><br>
+            <a class="admin" href="{% url 'userToLend' %}">User Lend out your laptop</a>  <br><br>
+            <a class="admin" href="{% url 'non_company_pc' %}">Individuals Pc</a> <br><br>
+            <a class="admin" href="{% url 'display' %}">VIEW AVAILABLE LAPTOPS</a> <br> <br>
+            <a class="admin" href="{% url 'display' %}">Feedbacks</a>
+        </div>
+      
+  
+  
+      <!-- footer -->
+  <footer class="footer">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-2">
+                  <h5>Information</h5>
+                  <ul>
+                      <li>Delivery Information</li>
+                      <li>Offers</li>
+                      <li>Return Policy</li>
+                      <li>Shipping Information</li>
+                      <li>Track your order</li>
+                      <li>Catalogues</li>
+                      <li>Help Center</li>
+                  </ul>
+              </div>
+              <div class="col-md-2">
+                  <h5>Our story</h5>
+                  <ul>
+                      <li>About us</li>
+                      <li>Our Company</li>
+                      <li>Coreer</li>
+                      <li>Financing</li>
+                      <li>Location</li>
+                  </ul>
+              </div>
+              <div class="col-md-2">
+                  <h5>My account</h5>
+                  <ul>
+                      <li>My Order</li>
+                      <li>24/7 call available</li>
+                      <li>Complains</li>
+                      <li>Advertise with us</li>
+                  </ul>
+              </div>
+              <div class="col-md-2">
+                  <h5>Resource</h5>
+                  <ul>
+                      <li>Free Design Service</li>
+                      <li>Troder Resource</li>
+                      <li>Become an Attllate</li>
+                      <li>Creator Program</li>
+                  </ul>
+              </div>
+              <div class="col-md-2">
+                  <h5>Contact Us</h5>
+                  <ul>
+                      <li>easylendpc@gmail.com</li>
+                      <li>09078417060</li>
+                  </ul>
+              </div>
+              <!-- <div class="col-md-2 text-right">
+                  <div class="contact-info">
+                      +2349043356791
+                  </div>
+              </div> -->
+          </div>
+          <div class="row">
+              <div class="col-md-6">
+                  <p class="copyright">
+                      &copy; 2024 EasyLendPc. All rights reserved.
+                  </p>
+              </div>
+              <div class="col-md-6 text-right">
+                  <p>
+                      <a href="#">Privacy</a> | <a href="#">Terms & Conditions</a>
+                  </p>
+              </div>
+          </div>
+      </div>
+    </footer>
+  </div>
+  </body>
+  </html>
