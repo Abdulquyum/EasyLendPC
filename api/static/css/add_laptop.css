@@ -8,10 +8,10 @@ body {
     align-items: center; /* Vertically center the content */
 }
 .form {
-    border: 1px solid rd;
+    border: 1px solid red;
     padding-top: 40px;
     background-color: rgba(255, 255, 255, 0.6); /* Slight transparency */
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px;
     width: 100%;
     max-width: 400px;
@@ -19,7 +19,7 @@ body {
     float: righ;
 }
 p {
-    padding: 20px;
+    padding: 15px;
     font-style: oblique;
     font-size: large;
     font-weight: bold;
@@ -28,6 +28,6 @@ body, html {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: black; /* Slight transparency */
+    background-color: #ccc; /* Slight transparency */
 
 }

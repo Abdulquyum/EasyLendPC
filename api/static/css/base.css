@@ -10,11 +10,13 @@ body {
     /*font-family: 'Source Serif Pro', sans-serif;
     font-size: 14px;*/
 }
-.container {
-    width: 80vw;
-    min-height: 65h;
+.contain {
+    border: 1px solid red;
+    width: 90vw;
+    min-height: auto;
     margin: 0 auto;
     box-sizing: border-box;
+    display: grid;
 }
 
 a {

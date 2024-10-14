@@ -1,27 +1,15 @@
-{% load static %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" href="{% static 'css/add_laptop.css' %}">
-    <title>sign up page</title>
-</head>
-<body>
-    <div class="container">
+{% extends 'base.html' %}
+{% block content %}
+        <br><br><br>
         <div class="form">
+            <a href="{% url 'home' %}">home</a> <br><br>
             <h1>SIGN UP</h1>
             <div class="form-group">
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %} <!-- security purpose -->
                     {{ form.as_p }} <br> <!-- duplicate as it was in the models -->
                     <button>Sign Up</button>
-                </form>
+                </form> <br><br>
             </div>
         </div>
-    <a href="{% url 'home' %}">home</a> <br><br>
-    </div>
-</body>
-</html>
+{% endblock %}
