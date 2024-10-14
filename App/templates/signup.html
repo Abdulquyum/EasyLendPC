@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: url('images/laptop-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: flex-start; /* Align content to the left */
+            align-items: center; /* Vertically center the content */
+        }
+
+        .overlay-form {
+            background-color: rgba(255, 255, 255, 0.85); /* Slight transparency */
+            padding: 30px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 400px;
+            margin-left: 50px;
+        }
+
+        .btn-outline-dark {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+    <title>Sign Up</title>
+</head>
+<body>
+    <div class="overlay-form">
+        <h3 class="mb-3 text-center">Create account</h3>
+        <p class="mb-4 text-center">Fill in details</p>
+        
+        <form>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Username or e-mail" required>
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 mb-3">Sign up</button>
+            
+            <div class="d-flex justify-content-between mb-3">
+                <div>
+                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                    <label for="rememberMe">Remember me</label>
+                </div>
+                <a href="#" class="text-decoration-none">Forgot Password?</a>
+            </div>
+            
+            <p class="text-center">Already have an account? <a href="#">Sign in</a></p>
+            
+            <hr>
+            <div class="text-center">
+                <p>Or</p>
+                <a href="#" class="btn btn-outline-dark w-100 mb-2">
+                    <i class="fab fa-google me-2"></i>Sign up with Google
+                </a>
+                <br>
+                <a href="#" class="btn btn-outline-dark w-100 mb-2">
+                    <i class="fab fa-facebook me-2"></i>Sign up with Facebook
+                </a>
+                <br>
+                <a href="#" class="btn btn-outline-dark w-100">
+                    <i class="fab fa-twitter me-2"></i>Sign up with X
+                </a>
+                <br>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
