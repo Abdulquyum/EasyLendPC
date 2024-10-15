@@ -39,8 +39,10 @@
                         <input type="number" id="quantity" class="form-control" value="1">
                     </div>
                     <p class="status">{{ laptop.status }}</p>
-                    <button class="btn btn-primary"><a href="http://t.me/easylendpc_bot" target="_blank">Check out</a></button>
-                    <button class="btn btn-secondary"><a href="{% url 'display' %}">back</a></button>
+
+                    <button class="btn btn-primary" onclick="window.open('http://t.me/easylendpc_bot', '_blank')">Check out</button>
+                    <button class="btn btn-secondary" onclick="window.location.href='{% url 'non_company_pc' %}'">Back</button>
+
                     <p class="sku">SKU: EW-12024</p>
                     <div class="share-icons">
                         <span>Share:</span>

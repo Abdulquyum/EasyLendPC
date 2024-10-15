@@ -7,14 +7,14 @@ body {
     align-items: center; /* Vertically center the content */
 }
 .banner {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     padding: 30px;
     display: grid;
 
 }
 
 .admin {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     padding: 30px;
     display: grid;
     border-radius: 30px;
