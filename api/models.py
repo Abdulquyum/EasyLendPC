@@ -5,7 +5,7 @@ from django.urls import reverse
 class Laptop(models.Model):
     owner = models.CharField(max_length=225, default="EasyLendPC")
     name = models.CharField(max_length=220)
-    description = models.TextField(max_length=225)
+    description = models.TextField(max_length=1000)
     status = models.CharField(max_length=225)
     image = models.ImageField(null=False, blank=True, upload_to="images/")
 

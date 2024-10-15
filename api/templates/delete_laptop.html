@@ -1,15 +1,22 @@
-<h1>DELETE LAPTOP FROM DATABASE</h1>
-    <div class="form-group">
-         <h2>DELETE: {{ laptop.name }}</h2>
-         {% if laptop.image %} 
-            <img src="{{ laptop.image.url }}" alt="laptop" width="70px">
-        {% else %}
-            <img src="" alt="image Unvailable"> <br>
-        {% endif %}
-    <h2>ARE YOU SURE YOU WANT TO DELETE???</h2>
-        <form method="POST" enctype="multipart/form-data">
-            {% csrf_token %} <!-- security purpose -->
-            <button>DELETE</button>
-            <a href="{% url 'display' %}">Cancel</a>
-        </form>
-    </div>
+{% extends 'base_form.html' %}
+{% load static %}
+{% block content %}
+    <br>
+        <div class="form">
+        <a href="{% url 'home' %}">home</a> <br><br>
+        <h3>DELETE LAPTOP FROM DATABASE</h3>
+            <div class="form-group">
+                <h3>DELETE: {{ laptop.name }}</h3>
+                {% if laptop.image %} 
+                    <img src="{{ laptop.image.url }}" alt="laptop" width="70px">
+                {% else %}
+                    <img src="" alt="image Unvailable"> <br>
+                {% endif %}
+            <h4>ARE YOU SURE YOU WANT TO DELETE???</h4>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %} <!-- security purpose -->
+                    <button>DELETE</button>
+                    <a href="{% url 'display' %}" style="float: right;">Cancel</a>
+                </form> <br>
+            </div>
+{% endblock %}
