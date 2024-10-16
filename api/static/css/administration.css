@@ -3,6 +3,7 @@ body {
     background-size:contain;
     display: flex;
     background-color: black;
+    color: #fff;
     /*justify-content: flex-end; /* Align content to the left *
     align-items: center; /* Vertically center the content */
 }
@@ -27,4 +28,8 @@ body {
 
 a {
     text-decoration: none;
+}
+
+div i {
+    color: wheat;
 }

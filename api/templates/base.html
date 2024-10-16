@@ -11,9 +11,6 @@
     <link rel="stylesheet" href="{% static 'fontawesome/css/all.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
-    <link rel="stylesheet" href="{% static 'css/add_laptop.css' %}">
-    <link rel="stylesheet" href="{% static 'css/administration.css' %}">
-    <link rel="stylesheet" href="{% static 'css/display_laptop.css' %}">
     
     <title>EasyLendPc</title>
 </head>
@@ -22,7 +19,7 @@
     <header class="p-3 border-bottom">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="logo">
-                <img src="{% static 'images/laptop-image.jpg' %}" alt="" height="40"><b m-3 style="color: #fff;">EasyLendPc</b>
+                <img src="{% static 'images/laptop-image.jpg' %}" alt="" height="40"><b m-3>EasyLendPc</b>
             </div>
             <nav>
                 <a class="link" href="{%url 'home'%}" class="mx-2">Home</a>
@@ -67,8 +64,6 @@
                         <li>Delivery Information</li>
                         <li>Offers</li>
                         <li>Return Policy</li>
-                        <li>Shipping Information</li>
-                        <li>Track your order</li>
                         <li>Catalogues</li>
                         <li>Help Center</li>
                     </ul>
@@ -102,11 +97,11 @@
                     </ul>
                 </div>
                 <div class="col-md-2">
-                    <h5>Contact Us</h5>
+                    <h5 id="contact">Contact Us</h5>
                     <ul>
-                        <li>olatunjinasir58@gmail.com</li>
-                        <li>08101306497</li>
-                        <li>Follow us on social media</li>
+                        <li><a href="mailto:easylendpc@gmail.com">easylendpc@gmail.com</a></li>
+                        <li>09078417060</li>
+                        <li><a href="http://t.me/easylendpc_bot" 'target='_blank'>Connect on Telegram</a></li>
                     </ul>
                 </div>
                 <!-- <div class="col-md-2 text-right">

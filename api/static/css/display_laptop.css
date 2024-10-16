@@ -11,9 +11,14 @@ body, html {
     width: 100%;
     max-width: 400px;
     margin-left: 50px;
+    color: black;
 }
 
 .btn-outline-dark {
     display: flex;
     align-items: center;
+}
+
+a {
+    text-decoration: none;
 }

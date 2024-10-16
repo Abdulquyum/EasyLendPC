@@ -3,20 +3,20 @@
 {% block content %}
     <br>
         <div class="form">
-        <a href="{% url 'home' %}">home</a> <br><br>
+        <a href="{% url 'home' %}" class="blue">home</a> <br><br>
         <h3>DELETE LAPTOP FROM DATABASE</h3>
             <div class="form-group">
-                <h3>DELETE: {{ laptop.name }}</h3>
+                <h4>DELETE: {{ laptop.name }}</h4>
                 {% if laptop.image %} 
                     <img src="{{ laptop.image.url }}" alt="laptop" width="70px">
                 {% else %}
                     <img src="" alt="image Unvailable"> <br>
                 {% endif %}
-            <h4>ARE YOU SURE YOU WANT TO DELETE???</h4>
+            <strong style="color: red;">ARE YOU SURE YOU WANT TO DELETE???</strong>
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %} <!-- security purpose -->
-                    <button>DELETE</button>
-                    <a href="{% url 'display' %}" style="float: right;">Cancel</a>
+                    <br><button>DELETE</button>
+                    <small><a href="{% url 'display' %}" class="blue" style="float: right;">Cancel</a></small>
                 </form> <br>
             </div>
 {% endblock %}

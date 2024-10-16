@@ -3,7 +3,7 @@
 {% block content %}
     <br>
         <div class="form">
-        <a href="{% url 'home' %}">home</a> <br><br>
+        <a href="{% url 'home' %}" class="blue">home</a> <br><br>
         <h3>DELETE PC FROM DATABASE</h3> <br>    
             <div class="form-group">
                 <h4>DELETE: {{ laptop.name }}</h4>
@@ -16,7 +16,7 @@
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %} <!-- security purpose -->
                    <br> <button>DELETE</button>
-                    <a href="{% url 'display' %}" style="float: right;">Cancel</a>
+                    <a href="{% url 'display' %}" class="blue" style="float: right;">Cancel</a>
                 </form> <br>
             </div>
 {% endblock %}

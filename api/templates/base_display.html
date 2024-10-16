@@ -18,50 +18,32 @@
                 <img src="{% static 'images/laptop-image.jpg' %}" alt="laptop" width="40px"><b m-3>EasyLendPc</b>
             </div>
             <nav>
-                <a class="link" href="{%url 'home'%}" class="mx-2">Home</a>
-                <a class="link" href="{%url 'display'%}" class="mx-2">Product</a>
-                <a class="link" href="{%url 'about'%}" class="mx-2">About Us</a>
+                <a href="{%url 'home'%}" class="link mx-2">Home</a>
+                <a href="{%url 'display'%}" class="link mx-2">Product</a>
+                <a href="{%url 'about'%}" class="link mx-2">About Us</a>
                 {% if user.is_authenticated %}
-                            <a class="link" href="{%url 'logout'%}" class="mx-2">Log Out</a>
+                            <a href="{%url 'logout'%}" class="link mx-2">Log Out</a>
                         {% else %}
-                            <a class="link" href="{%url 'signup'%}" class="mx-2">Sign Up</a>
-                            <a class="link" href="{%url 'login'%}" class="mx-2">Log In</a>
+                            <a href="{%url 'signup'%}" class="link mx-2">Sign up</a>
+                            <a href="{%url 'login'%}" class="link mx-2">Log In</a>
                         {% endif %}
                     </nav>
                     {% if user.is_authenticated %}
                         {% if user.id == 1 %}
                         <div class="user-actions">
-                            <a class="link" href="{%url 'administration' %}" class="me-3">Dashboard</a>
+                            <a href="{%url 'administration' %}" class="link me-2">Dashboard</a>
                             <i class="fas fa-users-cog"></i>
                         </div>
                         {% else %}
                         <div class="user-actions">
-                            <a class="link" href="#" class="me-3">My Account</a>
+                            <a href="#" class="link me-3">My Account</a>
                             <i class="fas fa-shopping-cart"></i>
                         </div>
                         {%endif %}
                     {% endif %}
         </div>
     </header>
-<!-- <ul>
-    {% for userpc in object_list %}
-        <li>
-            <a href="{% url 'nonCompanyPc-details' userpc.pk %}">{{ userpc.pc_name }}</a> - 
-            <small><a href="{% url 'edit_userPc' userpc.pk %}">[edit]</a></small> <br>
-            <h3>Owned By: {{ userpc.pc_owner}}</h3>
-                {% if userpc.image %} 
-                    <img src="{{ userpc.image.url }}" alt="laptop" width="70px">
-                {% else %}
-                    <img src="" alt="image Unvailable"> <br>
-                {% endif %} <br>
-                {{ userpc.pc_description}} <br>
-            <strong>status: {{ userpc.pc_status}}</strong>
-            <h3>Owner Phone Number: {{ userpc.phone_number}}</h3>
-        </li> <br><br>
-    {% endfor %}
-</ul>
-<a href="{% url 'display' %}">back</a> -
-<a href="{% url 'home' %}">home</a> <br><br> -->
+
     <div class="container" style="padding: 30px 0;">
     
     {% block content %}
@@ -83,7 +65,7 @@
                         <li>Catalogues</li>
                         <li>Help Center</li>
                     </ul>
-                </div> \
+                </div>
                 <div class="col-md-2">
                     <h5>Our story</h5>
                     <ul>
