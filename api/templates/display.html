@@ -2,7 +2,7 @@
 {% load static %} 
 {% block content %}
 
-    <h1 style="text-align: center; padding-bottom: 20px;">EASYLENDPC LAPTOPS</h1>
+    <h1 class="centre">EASYLENDPC LAPTOPS</h1>
 
 
             {% if user.is_authenticated %}
@@ -51,11 +51,7 @@
                     </div>
                 </div>
                 {% endfor %}
-                <a href="{% url 'non_company_pc' %}">Next</a> <br><br>
-                {% endif %}
-        <!-- </div> -->
-            
-            
-        
+                <a href="{% url 'non_company_pc' %}" class="centre">Next</a> <br><br>
+            {% endif %}
 
 {% endblock %}

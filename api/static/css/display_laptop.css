@@ -22,3 +22,8 @@ body, html {
 a {
     text-decoration: none;
 }
+
+.centre {
+    text-align: center;
+    padding-bottom: 20px;
+}
