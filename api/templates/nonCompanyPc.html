@@ -1,0 +1,59 @@
+{% extends 'base_display.html' %}
+{% load static %} 
+{% block content %}
+
+    <h1 style="text-align: center; padding-bottom: 20px;">NON COMPANY LAPTOPS</h1>
+
+
+    {% if user.is_authenticated %}
+        {% for userpc in object_list %}
+        <div class="container product-detail">
+            <div class="row" style="padding-bottom: 40px;">
+                <div class="col-md-6 product-image">
+                    {% if userpc.image %} 
+                        <img src="{{ userpc.image.url }}" alt="laptop" width="500px" height="300px">
+                    {% else %}
+                        <img src="" alt="image Unvailable"> <br>
+                    {% endif %}<br> <br>
+                </div>
+                <div class="col-md-6">    
+                    <h2><a href="{% url 'nonCompanyPc-details' userpc.pk %}">{{ userpc.pc_name }}</a></h2> <br>
+                    <h3>Owned By: {{ userpc.pc_owner}}</h3>
+                    {{ userpc.pc_description}} <br>
+                    <strong>status: {{ userpc.pc_status}}</strong>
+                    <h4>Owner's Phone Number: {{ userpc.phone_number}}</h4>
+                    <br><br>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <a href="{% url 'display' %}">back</a> -
+        <a href="{% url 'home' %}">home</a> <br><br>
+    {% else %}
+        {% for userpc in object_list %}
+        <div class="container product-detail">
+            <div class="row" style="padding-bottom: 40px;">
+                <div class="col-md-6 product-image">
+                    {% if userpc.image %} 
+                        <img src="{{ userpc.image.url }}" alt="laptop" width="500px" height="300px">
+                    {% else %}
+                        <img src="" alt="image Unvailable"> <br>
+                    {% endif %}<br> <br>
+                </div>
+                <div class="col-md-6">    
+                    <h2>{{ userpc.pc_name }}</h2> <br>
+                    <h3>Owned By: {{ userpc.pc_owner}}</h3>
+                    {{ userpc.pc_description}} <br>
+                    <strong>status: {{ userpc.pc_status}}</strong>
+                    <h5>Owner's Number: {{ userpc.phone_number}}</h5>
+                    <br><br>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <a href="{% url 'display' %}">back</a>
+        <a href="{% url 'home' %}" style="float: right;">home</a> <br><br>
+    {% endif %}
+    
+    
+{% endblock %}

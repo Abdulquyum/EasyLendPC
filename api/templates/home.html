@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+    <!-- Hero Section -->
+    <section class="hero-section" style="padding: 30px 0;">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Rent PCs with Ease. Anytime, Anywhere</h1>
+            <p>Fast, reliable, and affordable PC rental for your work, study, or project. Delivered to your door.</p>
+        </div>
+    </section>
+
+    {% if user.is_authenticated %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="skip text-center">
+                    <a class="link" href="{%url 'display'%}" class="mx-2">
+                        <div class="skip-body">
+                            <i class="fas fa-hand-holding-usd"></i>
+                            <h5 class="skip-title">Borrow anytime</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="skip text-center">
+                    <a class="link" href="{%url 'non_company_pc'%}" class="mx-2">
+                        <div class="skip-body">
+                            <i class="fas fa-shopping-cart"></i>
+                            <h5 class="skip-title">Easy to Shop</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="skip text-center">
+                    <a href="#contact">
+                        <div class="skip-body">
+                            <i class="fas fa-headset"></i>
+                            <h5 class="skip-title">24/7 Support</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="skip text-center">
+                    <a href="{% url 'userToLend' %}">
+                        <div class="skip-body">
+                            <i class="fas fa-box-open"></i>
+                            <h5 class="skip-title">Lend your goods</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+
+
+
+    <div class="container" style="padding: 30px 0;">
+        
+        <div class="row product-grid">
+            <div class="col-md-4">
+                <div class="product-item">
+                    <i class="fas fa-heart heart-icon"></i>
+                    <img src="{% static 'images/demo.jpg' %}" alt="HP Spectre 4D">
+                    <h5 class="white">HP Spectre 4D</h5>
+                    <p><span class="status-dot"></span>Available</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="product-item">
+                    <i class="fas fa-heart heart-icon"></i>
+                    <img src="{% static 'images/demo.jpg' %}" alt="Lenovo Legion 5">
+                    <h5 class="white">Lenovo Legion 5</h5>
+                    <p><span class="status-dot"></span>Available</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="product-item">
+                    <i class="fas fa-heart heart-icon"></i>
+                    <img src="{% static 'images/demo.jpg' %}" alt="Lenovo Legion 4">
+                    <h5 class="white">Lenovo Legion 4</h5>
+                    <p><span class="status-dot"></span>Available</p>
+                </div>
+            </div>
+            <!-- Add more products as needed -->
+        </div>
+    </div>
+
+
+
+
+
+
+
+ 
+
+            <section class="how-it-works py-5">
+                <div class="container">
+                  <h2 class="text-center mb-5 white">How it works</h2>
+              
+                  <div class="row mb-4 border-box">
+                    <div class="col-md-4">
+                      <img src="{% static 'images/delivery home1.jpg' %}" class="img-fluid" alt="Choose Your PC">
+                    </div>
+                    <div class="col-md-8 d-flex flex-column justify-content-center">
+                      <h3 class="text-primary">Choose Your Pc</h3>
+                      <p>Browse our wide selection of laptops and PCs. Click on the PC that suits your rental duration.</p>
+                    </div>
+                  </div>
+              
+                  <div class="row mb-4 border-box">
+                    <div class="col-md-4 order-md-2">
+                      <img src="{% static 'images/delivery home2.jpg' %}" class="img-fluid" alt="Rental Plan & Delivery">
+                    </div>
+                    <div class="col-md-8 order-md-1 d-flex flex-column justify-content-center">
+                      <h3 class="text-primary">Rental Plan & Delivery</h3>
+                      <p>Select a rental plan that works for you, whether you need it for a day, week, or months. Once you lock your rental agreement, we’ll deliver the PC to your doorstep.</p>
+                    </div>
+                  </div>
+              
+                  <div class="row border-box ">
+                    <div class="col-md-4">
+                      <img src="{% static 'images/delivery home1.jpg' %}" class="img-fluid" alt="Use & Enjoy with Easy Return">
+                    </div>
+                    <div class="col-md-8 d-flex flex-column justify-content-center">
+                      <h3 class="text-primary">Use & Enjoy with Easy Return</h3>
+                      <p>Use the PC for work, school, or your leisure time. When the rental period is up, schedule for pick up through your account.</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+
+              
+
+    <div class="container mt-5">
+        <div class="subscription-section">
+            <div class="subscription-text">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Subscribe to our email newsletter today to receive updates on our latest news.</p>
+                <form class="form-inline">
+                    <div class="form-group mb-2">
+                        <input type="email" class="form-control" placeholder="Enter your email">
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2">Subscribe</button>
+                </form>
+            </div>
+            <div class="subscription-image">
+                <img src="{% static 'images/newsletter.jpg' %}" alt="image">
+            </div>
+        </div>
+    </div>
+{% endblock %}

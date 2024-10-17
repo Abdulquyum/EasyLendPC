@@ -1,0 +1,16 @@
+{% extends 'base_form.html' %}
+{% load static %}
+{% block content %}
+    <br>
+        <div class="form">
+        <a href="{% url 'home' %}" class="blue">home</a> <br><br>
+            <h2>REGISTER COMPANY PC</h2> <br>
+            <div class="form-group">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %} <!-- security purpose -->
+                    {{ form.as_p }} <br> <!-- duplicate as it was in the models -->
+                    <button>POST</button>
+                </form> <br>
+            </div>
+        </div>
+{% endblock %}

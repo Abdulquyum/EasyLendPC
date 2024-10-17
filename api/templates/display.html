@@ -1,0 +1,61 @@
+{% extends 'base_display.html' %}
+{% load static %} 
+{% block content %}
+
+    <h1 style="text-align: center; padding-bottom: 20px;">EASYLENDPC LAPTOPS</h1>
+
+
+            {% if user.is_authenticated %}
+                {% for laptop in object_list %}
+                <div class="container product-detail">
+                    <div class="row" style="padding-bottom: 40px;">
+                        <div class="col-md-6 product-image">
+                            {% if laptop.image %} 
+                            <img src="{{ laptop.image.url }}" alt="laptop" width="500px" height="300px">
+                            {% else %}
+                            <img src="" alt="image Unvailable"> <br>
+                            {% endif %} <br>
+                        </div>
+                        <div class="col-md-6">    
+                            <h2><a href="{% url 'laptop-details' laptop.pk %}">{{ laptop.name }}</a></h2> <br>
+                            <h4>Owned By: {{ laptop.owner}}</h4>
+                            
+                            {{ laptop.description|slice:":200" }} <br>
+                            <strong>status: {{ laptop.status}}</strong>
+                        <br><br>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <a href="{% url 'non_company_pc' %}">Next</a> <br><br>
+                </div>
+            {% else %}
+                {% for laptop in object_list %}
+                <div class="container product-detail">
+                    <div class="row" style="padding-bottom: 40px;">
+                        <div class="col-md-6 product-image">
+                            {% if laptop.image %} 
+                            <img src="{{ laptop.image.url }}" alt="laptop" width="500px" height="300px">
+                            {% else %}
+                            <img src="" alt="image Unvailable"> <br>
+                            {% endif %} <br>
+                        </div>
+                        <div class="col-md-6">    
+                            <h2>{{ laptop.name }}</h2> <br>
+                            <h4>Owned By: {{ laptop.owner}}</h4>
+                            
+                            {{ laptop.description|slice:":200" }} <br>
+                            <strong>status: {{ laptop.status}}</strong>
+                        <br><br>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <a href="{% url 'non_company_pc' %}">Next</a> <br><br>
+                {% endif %}
+        <!-- </div> -->
+            
+            
+        
+
+{% endblock %}

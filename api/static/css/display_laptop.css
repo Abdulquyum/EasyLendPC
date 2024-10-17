@@ -1,0 +1,24 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.overlay-form {
+    /* background-color: rgba(255, 255, 255, 0.85); Slight transparency */
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin-left: 50px;
+    color: black;
+}
+
+.btn-outline-dark {
+    display: flex;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}

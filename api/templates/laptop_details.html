@@ -1,0 +1,134 @@
+{% extends 'base_display.html' %}
+{% load static %} 
+{% block content %}
+      
+      <div style="padding: 30px 0;">
+        <div class="container product-detail">
+            <div class="row">
+                <div class="col-md-6 product-image">
+                    {% if laptop.image %} 
+                        <img src="{{ laptop.image.url }}" alt="laptop" width="500px" height="300px">
+                    {% else %}
+                        <img src="" alt="image Unvailable"> <br>
+                    {% endif %}
+                </div>
+                <div class="col-md-6">
+                    <h2> {{ laptop.name }} </h2>
+                    {% if user.id == 1 %}
+                        <a href="{% url 'update_laptop' laptop.pk %}">[edit]</a> - 
+                        <a href="{% url 'delete_laptop' laptop.pk %}">[delete]</a>
+                    {% endif %} <br>
+                    <h3>Owned By: {{ laptop.owner}}</h3>
+                    <p>{{ laptop.description }}</p>
+                    <div class="form-group">
+                        <label for="color">Color:</label>
+                        <select id="color" class="form-control">
+                            <option>Silver</option>
+                            <option>Black</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="keyboard">Keyboard Language:</label>
+                        <select id="keyboard" class="form-control">
+                            <option>English</option>
+                            <option>French</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" class="form-control" value="1">
+                    </div>
+                    <p class="status">{{ laptop.status }}</p>
+
+                    <button class="btn btn-primary" onclick="window.open('http://t.me/easylendpc_bot', '_blank')">Check out</button>
+                    <button class="btn btn-secondary" onclick="window.location.href='{% url 'non_company_pc' %}'">Back</button>
+
+                    <p class="sku">SKU: EW-12024</p>
+                    <div class="share-icons">
+                        <span>Share:</span>
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+  
+      <div class="container product-features">
+          <h2>Key Features:</h2>
+          <ul>
+              <li>Display: 13.3' 4K UHD OLED touchscreen for vibrant and sharp visuals</li>
+              <li>Processor: Intel Core i7 (11th Gen) for lightning-fast performance</li>
+              <li>Storage: 512GB SSD for quick access and ample storage</li>
+              <li>RAM: 16GB for smooth multitasking</li>
+              <li>Battery Life: Up to 12 hours of power, perfect for work or travel</li>
+              <li>Build: Ultra-thin, lightweight aluminum body with a 360-degree hinge for ultimate flexibility</li>
+              <li>Extras: Includes HP Stylus Pen and built-in Bang & Olufsen speakers for a premium multimedia experience</li>
+          </ul>
+          <h2>Why Rent the HP Spectre x360?</h2>
+          <ul>
+              <li>Flexibility: Perfect for presentations, note-taking, and creative projects with its 2-in-1 functionality</li>
+              <li>Portability: Lightweight and easy to carry, making it ideal for students, professionals, or travelers</li>
+              <li>Power: High-performance specs ensure you can run demanding applications without any lag</li>
+          </ul>
+          <p>Rent the HP Spectre x360 today and experience cutting-edge technology without the hefty price tag!</p>
+      </div>
+  
+  
+  
+  
+  
+      <div class="container customer-reviews">
+          <h2>Customer Reviews</h2>
+          <div class="review">
+              <h5>John D.</h5>
+              <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+              </div>
+              <p>The HP Spectre x360 is an absolute game-changer! I rented it for a design project, and the 4K touchscreen display made everything look so sharp and vibrant. The laptop is super fast, and the 2-in-1 functionality is perfect for both work and watching movies. Highly recommend it!</p>
+          </div>
+          <div class="review">
+              <h5>Sarah K.</h5>
+              <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+              </div>
+              <p>I needed a high-performance laptop for a business trip, and the Spectre x360 exceeded my expectations. It's incredibly lightweight, and the battery lasted all day without needing a charge. The build quality is premium, and I loved using the stylus for note-taking. Definitely renting this again!</p>
+          </div>
+      </div>
+  
+  
+  
+      <div class="container similar-products">
+          <h2>Similar Product</h2>
+          <div class="row">
+              <div class="col-md-4 product-item">
+                  <img src="images/demo.jpg" alt="Samsung Galaxy Pro">
+                  <p>Samsung Galaxy Pro</p>
+                  <input type="radio" name="product" id="samsung">
+              </div>
+              <div class="col-md-4 product-item">
+                  <img src="images/demo.jpg" alt="Apple Mobile">
+                  <p>Apple Mobile</p>
+                  <input type="radio" name="product" id="apple-mobile">
+              </div>
+              <div class="col-md-4 product-item">
+                  <img src="images/demo.jpg" alt="Apple Nexus">
+                  <p>Apple Nexus</p>
+                  <input type="radio" name="product" id="apple-nexus">
+              </div>
+          </div>
+      </div>
+  
+  
+  
+{% endblock %}
