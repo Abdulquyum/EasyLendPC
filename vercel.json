@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "builds": [
+      {
+          "src": "EasyLendPC/wsgi.py",
+          "use": "@vercel/python",
+          "config": { "maxLambdaSize": "15mb", "runtime": "python3.6.9" }
+      }
+  ],
+  "routes": [
+      {
+          "src": "/(.*)",
+          "dest": "EasyLendPC/wsgi.py"
+      }
+  ],
+  "env": {
+      "DJANGO_SETTINGS_MODULE": "EasyLendPc.settings",
+      "PYTHONUNBUFFERED": "1",
+      "PYTHON_VERSION": "3.6.9"
+  },
+  "buildCommand": "pip install -r requirements.txt"
+}

@@ -1,0 +1,70 @@
+/* Styles for Team section and About page */
+#about {
+    padding: 50px 0;
+}
+
+#about h1 {
+    text-align: center;
+    color: #fff;
+}
+
+.about-subsection {
+    border: 1px solid back;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    padding: 20px 0;
+    color: #fff;
+}
+
+.developers {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    border: 1px solid rd;
+    margin-top: 30px;
+    color: #fff;
+    /* background-image: linear-gradient(180deg, #fff, blue); */
+    min-height: 300px;
+}
+
+.developers h2 {
+    color: #fff !important;
+}
+
+#team {
+    margin-top: 30px;
+}
+
+.image-circle {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}
+
+.profile-link {
+    display: flex;
+    background-color: black;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.profile-link a {
+    text-decoration: none;
+    color: #fff;
+}
+
+p {
+    font-family: Source Serif Pro;
+}
+
+.github-repo {
+    color: #fff;
+    text-decoration: none;
+    padding-top: 30px;
+}
