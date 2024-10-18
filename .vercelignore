@@ -4,5 +4,4 @@ venv/
 *.log
 node_modules/
 media/
-static/
 migrations/
