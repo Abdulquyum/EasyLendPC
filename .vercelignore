@@ -16,3 +16,4 @@ output/
 *.vscode/
 *.idea/
 *.DS_Store
+api/static/
