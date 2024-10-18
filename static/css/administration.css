@@ -1,0 +1,35 @@
+body {
+    background: url('../images/laptop-image.jpg') no-repeat center center fixed;
+    background-size:contain;
+    display: flex;
+    background-color: black;
+    color: #fff;
+    /*justify-content: flex-end; /* Align content to the left *
+    align-items: center; /* Vertically center the content */
+}
+.banner {
+    /* border: 1px solid red; */
+    padding: 30px;
+    display: grid;
+
+}
+
+.admin {
+    /* border: 1px solid red; */
+    padding: 30px;
+    display: grid;
+    border-radius: 30px;
+    width: 50%;
+    text-align: center;
+    background-color: blue;
+    color: #fff;
+    
+}
+
+a {
+    text-decoration: none;
+}
+
+div i {
+    color: wheat;
+}
