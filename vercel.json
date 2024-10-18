@@ -1,5 +1,4 @@
 {
-  "version": 2,
   "builds": [
       {
           "src": "EasyLendPC/wsgi.py",
@@ -12,11 +11,5 @@
           "src": "/(.*)",
           "dest": "EasyLendPC/wsgi.py"
       }
-  ],
-  "env": {
-      "DJANGO_SETTINGS_MODULE": "EasyLendPc.settings",
-      "PYTHONUNBUFFERED": "1",
-      "PYTHON_VERSION": "3.6.9"
-  },
-  "buildCommand": "pip install -r requirements.txt"
+  ]
 }
