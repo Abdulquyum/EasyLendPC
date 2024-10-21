@@ -9,51 +9,46 @@ The platform’s primary objective is to resolve challenges such as missed deadl
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Setup and Installation](#setup-and-installation)
-- [Deployment](#deployment)
 - [Using the API documentation](#using-the-api-documentation)
 - [Contributing](#contributing)
-- [License](#license)
 
 
 ## Features
-### Institution Dashboard
+EasyLendPC offers a range of features that provide users with a smooth and intuitive experience for lending and borrowing laptops. The platform is designed to cater to both individuals who want to lend out their PCs and those looking for a reliable short-term laptop solution. Here's a breakdown of the key features:
 
-Institutions can:
-- Manage Departments: Create and delete departments.
-- Manage Teachers: Create and delete teachers.
-- Manage Learners: Create and delete learners.
+###  🖥️ Laptop Listing and Borrowing
+Lend Out a Laptop: Users can list their laptops for lending, including essential details such as the laptop's name, description, and condition.
+Admin Review: Every listing submitted by users is sent for admin approval before it’s displayed on the main site to ensure quality and accuracy.
+Browse Available Laptops: Users can browse through the collection of available laptops and select one that fits their needs.
+Price Negotiation via Telegram: Borrowers can negotiate prices and terms directly with the laptop owner through the integrated Telegram bot.
 
-### Teacher Dashboard
-Teachers can:
-- Manage resources: Create and delete resources.
-- View Resources: View resources they have created.
-- Specific Resource Riew: View detailed content of a resource.
+###  🔒 User Authentication
+Signup/Login: Secure authentication using Django’s built-in authentication system.
+Account Management: Once logged in, users can view and manage their account details, see the status of their listed laptops, and track borrowed items.
+Admin Dashboard: Special access for admin users to manage and review laptop listings, user activity, and approvals.
 
-### Learner Dashboard
-- View Resources: Access all resources available in their department.
-- Detailed Resource View: Click on a resource to view its detailed content.
-- User authentication and authorization
+###  📲 Telegram Integration
+Telegram Bot: Users can communicate with the admin or laptop owners via a Telegram bot integrated into the platform.
+Real-time Notifications: Receive instant updates about listing approvals, borrowing requests, and other important activities through the bot.
 
-### Authentication and Access Control
-- Role-Based Access: Different dashboards and functionalities are accessible based on the user's role (Institution, Teacher, Learner).
-- User Authentication: Secure login and logout functionalities.
+###  🌐 Responsive Design
+Mobile-Friendly UI: Built with a responsive design using Bootstrap, EasyLendPC is fully accessible on any device, from desktops to smartphones, ensuring a seamless experience for users.
+Dynamic Dashboard: Admin and user dashboards adapt to user roles, allowing for easy management of personal and administrative tasks.
 
 
 ## Technologies Used
 
 - **Backend**: Django, SQLite
-- **Frontend**: HTML5, CSS, Flask, Jinja2
-- **Database**: MySQL (development), POSTGRESQL (production)
+- **Frontend**: HTML5, CSS, Jinja2, Bootstrap
+- **Database**: SQLite
 - **Server**: Gunicorn
-- **Deployment**: The application was deployed on render.com. [Visit the live app](https://resourcehub-0szu.onrender.com/)
-
 
 ## Setup and Installation
 ### Prerequisites
 
 - Python 3.6 or higher
 - Virtualenv
-- MySQL (for development)
+- SQLite (for development)
 
 ### Installation
 
@@ -83,7 +78,7 @@ Follow these steps to run the application on your local machine.
     ```bash
     python3 -m api.telegram_bot.bot
     ```
-    The API is configured to run on port 5001 of your machine, so ensure nothing else is running on that port.
+    The API is configured to run on port 5000 of your machine, so ensure nothing else is running on that port.
 
 5. Start the *app* on another terminal:
     ```bash
@@ -92,10 +87,6 @@ Follow these steps to run the application on your local machine.
 
 6. Run the application:
 Open your browser and navigate to http://127.0.0.1:8000/ to start using the app.
-
-
-## Deployment
-The application is deployed on [Render](https://render.com/). You can access it [here](https://resourcehub-0szu.onrender.com/).
 
 
 ## Contributing
