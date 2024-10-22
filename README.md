@@ -93,5 +93,4 @@ Open your browser and navigate to http://127.0.0.1:8000/ to start using the app.
 Contributions are welcome! Please fork the repository and create a pull request with your changes.
 
 
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
